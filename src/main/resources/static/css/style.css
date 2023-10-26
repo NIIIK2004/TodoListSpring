@@ -1,0 +1,25 @@
+@import 'reset.css';
+@import 'fonts.css';
+@import 'vars.css';
+@import 'global.css';
+
+/*Components*/
+@import 'components/header.css';
+@import 'components/section-top.css';
+@import 'components/custom-select.css';
+@import 'components/status-name.css';
+@import 'components/radio-button.css';
+@import 'components/form-element.css';
+@import 'components/checkbox.css';
+
+/*Details*/
+@import 'details.css';
+
+/*Profile*/
+@import 'profile.css';
+
+/*Main*/
+@import 'main.css';
+
+/*Auth & Registration */
+@import 'auth.css';

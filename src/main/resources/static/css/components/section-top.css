@@ -1,0 +1,38 @@
+.section-top {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: center;
+}
+
+.section-top__link {
+    transition: color .3s, opacity .3s;
+    line-height: 1;
+    font-size: 20px;
+    padding-right: 28px;
+    position: relative;
+    color: var(--text-color);
+}
+
+.section-top__link:hover {
+    color: var(--accent);
+}
+
+.section-top__link:focus {
+    opacity: .6;
+}
+
+.section-top__link:after {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 13px;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../images/icons/back.svg");
+    top: 50%;
+    transform: translateY(-50%);
+}

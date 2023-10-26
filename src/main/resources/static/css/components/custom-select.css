@@ -1,0 +1,107 @@
+.select {
+    position: absolute;
+    opacity: 0;
+    height: 1px;
+    width: 1px;
+    z-index: -100
+}
+
+.custom-select {
+    position: relative;
+    font-size: 16px;
+    padding: 9px 15px;
+    border-radius: 25px;
+    border: 1px solid var(--accent);
+    color: var(--text-color);
+    transition: border-radius .3s;
+}
+
+.custom-select__current::before,
+.custom-select__current::after {
+    position: absolute;
+    content: "";
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-select__current::after {
+    right: 4px;
+    width: 14px;
+    height: 8px;
+    background-image: url("../../images/icons/arrow-select.svg");
+    transition: transform .3s;
+}
+
+.custom-select--status::before,
+.custom-select--category::before {
+    left: 5px;
+}
+
+.custom-select--status::before {
+    background-image: url("../../images/icons/status.svg");
+    width: 14px;
+    height: 18px;
+}
+
+.custom-select--category::before {
+    background-image: url("../../images/icons/category.svg");
+    width: 15px;
+    height: 13px;
+}
+
+.custom-select--show .custom-select__current {
+    border-color: var(--accent);
+}
+
+.custom-select--show .custom-select__current::after {
+    transform: rotate(-180deg) translateY(50%)
+}
+
+.custom-select--show .custom-select__list {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    background-color: #fff;
+    z-index: 100;
+}
+
+.custom-select__current {
+    line-height: 1;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+    padding-right: 30px;
+    padding-left: 27px;
+}
+
+.custom-select__list {
+    width: 335px;
+    position: absolute;
+    left: -1px;
+    top: 80px;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s ease;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 20px 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+    border: 1px solid #E8E8E8;
+}
+
+.custom-select__item {
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: color .3s;
+    align-self: flex-start;
+    text-align: center;
+}

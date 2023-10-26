@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList | Авторизация</title>
+    <link rel="icon" href="../images/icons/favicon.svg" type="images/x-icon">
+    <link rel="shortcut icon" href="../images/icons/favicon.svg" type="images/x-icon">
+    <link rel="stylesheet" href="../../../../../todolist/css/style.css">
+</head>
+
+<body class="body">
+<main>
+    <section class="auth">
+        <div class="auth__content">
+            <div class="auth__top">
+                <div class="auth__left">
+                    <p class="auth__logo logo">logotype</p>
+                    <h1 class="auth__title">Регистрация</h1>
+                </div>
+                <div class="auth__decor">
+                    <img class="auth__img" src="../../../../../todolist/images/icons/hand.png" alt="hand" width="32" height="32">
+                </div>
+            </div>
+            <form class="auth__form" action="">
+                <ul class="auth__list">
+                    <li class="auth__item">
+                        <span class="error" id="nameError">Имя не должно иметь запрещенные символы</span>
+                        <input class="field" type="text" placeholder="Введите имя" id="name" name="name" required>
+                    </li>
+                    <li class="auth__item">
+                        <span class="error" id="surnameError">Фамилия не должна иметь запрещенные символы</span>
+                        <input class="field" type="text" placeholder="Введите фамилию" id="surname" name="surname"
+                               required>
+                    </li>
+                    <li class="auth__item">
+                        <input class="field" type="email" placeholder="Введите Email" id="email" name="email" required>
+                    </li>
+                    <li class="auth__item">
+                        <span class="error" id="loginError">Логин не должен иметь кириллицу</span>
+                        <span class="error" id="loginCheckError">Логин уже используется</span>
+                        <span class="error" id="loginLengthError">Минимальное количество символов - 5</span>
+                        <input class="field" type="text" placeholder="Придумайте логин" id="login" name="login"
+                               required>
+                    </li>
+                    <li class="auth__item">
+                        <span class="error" id="passwordError">Пароль не должен иметь кириллицу</span>
+                        <span class="error" id="passwordLengthError">Минимальное количество символов - 5</span>
+                        <input class="field" type="password" placeholder="Придумайте пароль" id="password"
+                               name="password" required>
+                    </li>
+                </ul>
+                <label class="auth__checkbox custom-checkbox">
+                    <input class="custom-checkbox__input" type="checkbox" checked name="" value="">
+                    <span class="checkmark"></span>
+                    Я согласен с <a href="">пользовательским соглашением</a>
+                </label>
+                <span class="auth__link-text">
+                        Есть аккаунт? <a href="auth.html">Войти</a>
+                </span>
+                <button class="auth__btn" type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+        <img class="auth__background" src="../../../../../todolist/images/bg-auth.svg" alt="" width="960">
+    </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../../../../../todolist/js/main.js"></script>
+<script src="../../../../../todolist/js/registration.js"></script>
+</body>
+
+</html>

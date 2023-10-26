@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList | Авторизация</title>
+    <link rel="icon" href="../images/icons/favicon.svg" type="images/x-icon">
+    <link rel="shortcut icon" href="../images/icons/favicon.svg" type="images/x-icon">
+    <link rel="stylesheet" href="../../../../../todolist/css/style.css">
+</head>
+
+<body class="body">
+<main>
+    <section class="auth auth--revert">
+        <div class="auth__content">
+            <div class="auth__top">
+                <div class="auth__left">
+                    <p class="auth__logo logo">logotype</p>
+                    <h1 class="auth__title">Авторизация</h1>
+                </div>
+                <div class="auth__decor">
+                    <img class="auth__img" src="../../../../../todolist/images/icons/hand.png" alt="hand" width="32" height="32">
+                </div>
+            </div>
+            <form class="auth__form" action="">
+                <ul class="auth__list">
+                    <li class="auth__item">
+                        <input class="field" type="text" placeholder="Логин" id="login" name="login">
+                    </li>
+                    <li class="auth__item">
+                        <input class="field" type="password" placeholder="Пароль" id="password" name="password">
+                    </li>
+                </ul>
+                <p class="auth__info">
+                    Нет аккаунта? <a href="registration.html">Зарегистрироваться</a>
+                </p>
+                <button class="auth__btn" type="button">Войти</button>
+            </form>
+        </div>
+        <img class="auth__background" src="../../../../../todolist/images/bg-auth.svg" alt="" width="960">
+    </section>
+</main>
+<script src="../../../../../todolist/js/main.js"></script>
+</body>
+
+</html>

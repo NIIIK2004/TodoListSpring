@@ -1,0 +1,37 @@
+.error {
+    color: #EA4C60;
+    font-size: 16px;
+    display: none;
+    font-weight: 500;
+}
+
+.error:not(:last-child) {
+    margin-bottom: 2px;
+}
+
+.error:last-child {
+    margin-bottom: 8px;
+}
+
+.error--active {
+    display: block;
+}
+
+.field {
+    background-color: #D4D4D4;
+    padding: 20px;
+    line-height: 1;
+    font-size: 18px;
+    color: var(--text-color);
+    border-radius: 13px;
+}
+
+.field::placeholder {
+    color: #595959;
+}
+
+@media (max-width: 540px) {
+    .field {
+        font-size: 16px;
+    }
+}

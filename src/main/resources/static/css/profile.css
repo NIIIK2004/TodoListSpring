@@ -1,0 +1,250 @@
+.profile--settings {
+    margin-bottom: 60px;
+}
+
+.profile__title {
+    margin-bottom: 60px;
+}
+
+.profile__subtitle {
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 26px;
+    color: var(--text-color);
+    margin-bottom: 45px;
+    display: inline-block;
+}
+
+.profile__indent {
+    margin-bottom: 80px;
+}
+
+.profile__avatar {
+    position: relative;
+}
+
+.profile__avatar-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile__avatar-button {
+    background-color: var(--accent);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .3s;
+}
+
+.profile__avatar-button:hover {
+    opacity: .6;
+}
+
+.profile__top {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.profile__top img {
+    object-fit: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.profile__top-text {
+    font-size: 46px;
+    line-height: 1.3;
+    font-weight: 500;
+    max-width: 730px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.profile__top-text span {
+    color: var(--accent);
+}
+
+.profile__top-short {
+    max-width: 440px;
+}
+
+.profile__top-btn {
+    background-color: var(--accent);
+    border: 1px solid transparent;
+    color: #fff;
+    line-height: 1;
+    font-size: 16px;
+    padding: 19px 25px;
+    display: inline-block;
+    border-radius: 13px;
+    transition: color .3s, background-color .3s;
+}
+
+.profile__top-btn:hover {
+    background-color: transparent;
+    border-color: var(--accent);
+    color: var(--text-color);
+}
+
+.profile__top-btn:focus {
+    opacity: .6;
+}
+
+.profile__information-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px 25px;
+    max-width: 1175px;
+}
+
+.profile__information-list--settings {
+    max-width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.profile__label {
+    color: #1B1B1B;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.profile__field {
+    padding: 23px 25px;
+    border-radius: 13px;
+    border: 2px solid #C6C6C6;
+}
+
+.profile__field::placeholder {
+    color: #888888;
+}
+
+.profile__security-list,
+.profile__themes-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.profile__security-list {
+    grid-gap: 30px 80px;
+    max-width: 850px;
+}
+
+.profile__themes-list {
+    grid-gap: 50px;
+}
+
+.profile__themes-name {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.profile__themes-name--classic {
+    color: var(--accent);
+}
+
+.profile__themes-name--dark {
+    color: var(--text-color);
+}
+
+.profile__themes-img {
+    border-radius: 15px;
+    border: 2px solid transparent;
+}
+
+.profile__themes-img--classic {
+    border-color: var(--accent);
+}
+
+.profile__themes-img--dark {
+    border-color: #808080;
+}
+
+.profile__social-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+}
+
+.profile__social-item {
+    background-color: #fff;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile__social-link {
+    border-radius: 100px;
+    color: #fff;
+    padding: 17px 0;
+    font-size: 15px;
+    line-height: 1;
+    width: 100%;
+    text-align: center;
+    background-color: #279FDB;
+    transition: opacity .3s;
+    margin-top: auto;
+}
+
+.profile__social-link:hover {
+    opacity: .6;
+}
+
+.profile__social-link--vk {
+    background-color: #0077FF;
+}
+
+.profile__social-link--mosioal {
+    background-color: #5748EF;
+}
+
+.profile__social-link--google {
+    background-color: #EA4335;
+}
+
+.profile__social-link--tandem {
+    background-color: #EC5581;
+}
+
+.profile__buttons {
+    margin-top: 60px;
+    padding-bottom: 25px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.profile__button {
+    padding: 18px 40px;
+    border-radius: 13px;
+    transition: opacity .3s;
+    color: #fff;
+}
+
+.profile__button:hover {
+    opacity: .6;
+}
+
+.profile__button--save {
+    background-color: var(--green);
+}
+
+.profile__button--cancel {
+    background-color: var(--accent);
+}

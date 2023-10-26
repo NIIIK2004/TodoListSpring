@@ -1,0 +1,159 @@
+.name-status {
+    line-height: 1;
+    padding: 9px 15px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.name-status--fixed {
+    margin-bottom: 25px;
+}
+
+.name-status--default {
+    padding-left: 7px;
+}
+
+.name-status--fan {
+    color: #5E54D8;
+    background-color: rgba(94, 84, 216, 0.15);
+}
+
+.name-status--tomorrow {
+    color: #0AD28A;
+    background-color: rgba(10, 210, 138, 0.15);
+}
+
+.name-status--note {
+    color: #4C9EEA;
+    background-color: rgba(76, 158, 234, 0.15);
+}
+
+.name-status--week {
+    color: #EA4C60;
+    background-color: rgba(234, 76, 96, 0.15);
+}
+
+.name-status--unimportant {
+    color: #FF9F0E;
+    background-color: rgba(255, 159, 14, 0.15);
+}
+
+.name-status--month {
+    color: #FFCA0D;
+    background-color: rgba(255, 202, 13, 0.15);
+}
+
+.name-status--important {
+    color: #EA4C60;
+    background-color: rgba(234, 76, 96, 0.15);
+}
+
+.name-status--year {
+    color: #891515;
+    background-color: rgba(137, 21, 21, 0.15);
+}
+
+/*category*/
+.name-status--game {
+    background-color: rgba(234, 76, 96, 0.15);
+    color: #EA4C60;
+}
+
+.name-status--favorite {
+    background-color: rgba(48, 206, 149, 0.15);
+    color: #30ce95;
+}
+
+.name-status--work {
+    background-color: rgba(76, 139, 234, 0.15);
+    color: #4C8BEA;
+}
+
+.name-status--study {
+    background-color: rgba(202, 147, 255, 0.15);
+    color: #CA93FF;
+}
+
+.name-status--home {
+    background-color: rgba(234, 190, 76, 0.15);
+    color: #EABE4C;
+}
+
+.name-status--friends {
+    background-color: rgba(255, 166, 147, 0.15);
+    color: #FFA693;
+}
+
+.name-status--personal {
+    background-color: rgba(234, 123, 76, 0.15);
+    color: #EA7B4C;
+}
+
+.name-status--food {
+    background-color: rgba(255, 147, 212, 0.15);
+    color: #FF93D4;
+}
+
+.name-status__category span {
+    position: relative;
+    padding-left: 22px;
+}
+
+.name-status__category span::before {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+.name-status--game span::before {
+    background-image: url("../../images/icons/game.svg");
+    width: 16px;
+    height: 12px;
+}
+
+.name-status--favorite span::before {
+    background-image: url("../../images/icons/favorite.svg");
+    width: 15px;
+    height: 14px;
+}
+
+.name-status--work span::before {
+    background-image: url("../../images/icons/work.svg");
+    width: 15px;
+    height: 15px;
+}
+
+.name-status--study span::before {
+    background-image: url("../../images/icons/study.svg");
+    width: 12px;
+    height: 15px;
+}
+
+.name-status--home span::before {
+    background-image: url("../../images/icons/home.svg");
+    width: 14px;
+    height: 15px;
+}
+
+.name-status--friends span::before {
+    background-image: url("../../images/icons/friends.svg");
+    width: 16px;
+    height: 14px;
+}
+
+.name-status--personal span::before {
+    background-image: url("../../images/icons/personal.svg");
+    width: 15px;
+    height: 14px;
+}
+
+.name-status--food span::before {
+    background-image: url("../../images/icons/food.svg");
+    width: 15px;
+    height: 15px;
+}

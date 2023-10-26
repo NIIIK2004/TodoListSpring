@@ -1,0 +1,75 @@
+.header {
+    margin: 40px 0 70px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.header__logo img,
+.header__profile img,
+.header__form label::after {
+    object-fit: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+}
+
+.header__form {
+    position: relative;
+    padding: 20px 50px 20px 25px;
+    border-radius: 10px;
+    max-width: 515px;
+    width: 100%;
+    background-color: #DFDFDF;
+}
+
+.header__form::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url("../../images/icons/search-form.svg");
+}
+
+.header__input {
+    width: 100%;
+}
+
+.header__profile,
+.header__settings {
+    display: flex;
+}
+
+.header__profile {
+    background-color: #DFDFDF;
+    border-radius: 60px;
+    padding: 8px 16px;
+    gap: 15px;
+    align-items: center;
+}
+
+.header__profile img {
+    transition: opacity .3s;
+}
+
+.header__profile img:hover {
+    opacity: .5;
+}
+
+.header__profile-not_avatar {
+    padding: 11px 20px;
+}
+
+.header__settings svg path {
+    transition: fill .3s;
+}
+
+.header__settings:hover svg path {
+    fill: #EA4C60;
+}
