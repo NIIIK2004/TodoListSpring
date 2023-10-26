@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoList | Авторизация</title>
-    <link rel="icon" href="../images/icons/favicon.svg" type="images/x-icon">
-    <link rel="shortcut icon" href="../images/icons/favicon.svg" type="images/x-icon">
-    <link rel="stylesheet" href="../../../../../todolist/css/style.css">
+    <title>TodoList | Регистрация</title>
+    <link rel="icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+    <link rel="shortcut icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body class="body">
@@ -21,7 +21,8 @@
                     <h1 class="auth__title">Регистрация</h1>
                 </div>
                 <div class="auth__decor">
-                    <img class="auth__img" src="../../../../../todolist/images/icons/hand.png" alt="hand" width="32" height="32">
+                    <img class="auth__img" th:src="@{/images/icons/hand.png}" alt="hand" width="32"
+                         height="32">
                 </div>
             </div>
             <form class="auth__form" action="">
@@ -58,19 +59,18 @@
                     Я согласен с <a href="">пользовательским соглашением</a>
                 </label>
                 <span class="auth__link-text">
-                        Есть аккаунт? <a href="auth.html">Войти</a>
+                        Есть аккаунт? <a th:href="@{login}">Войти</a>
                 </span>
-                <button class="auth__btn" type="submit">Зарегистрироваться</button>
+                <button class="auth__btn" id="registration-btn" type="submit">Зарегистрироваться</button>
             </form>
         </div>
-        <img class="auth__background" src="../../../../../todolist/images/bg-auth.svg" alt="" width="960">
+        <img class="auth__background" th:src="@{/images/bg-auth.svg}" alt="" width="960">
     </section>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="../../../../../todolist/js/main.js"></script>
-<script src="../../../../../todolist/js/registration.js"></script>
+<script th:src="@{/js/registration.js}"></script>
 </body>
 
 </html>
