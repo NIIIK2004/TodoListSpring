@@ -25,32 +25,32 @@
                          height="32">
                 </div>
             </div>
-            <form class="auth__form" action="">
+            <form method="POST" class="auth__form" th:action="@{/registration/save}" th:object="${user}">
                 <ul class="auth__list">
                     <li class="auth__item">
                         <span class="error" id="nameError">Имя не должно иметь запрещенные символы</span>
-                        <input class="field" type="text" placeholder="Введите имя" id="name" name="name" required>
+                        <input class="field" type="text" placeholder="Введите имя" id="name" name="name" th:field="*{name}" required>
                     </li>
                     <li class="auth__item">
                         <span class="error" id="surnameError">Фамилия не должна иметь запрещенные символы</span>
                         <input class="field" type="text" placeholder="Введите фамилию" id="surname" name="surname"
-                               required>
+                               th:field="*{surname}" required>
                     </li>
                     <li class="auth__item">
-                        <input class="field" type="email" placeholder="Введите Email" id="email" name="email" required>
+                        <input class="field" type="email" placeholder="Введите Email" id="email" name="email" th:field="*{email}" required>
                     </li>
                     <li class="auth__item">
                         <span class="error" id="loginError">Логин не должен иметь кириллицу</span>
                         <span class="error" id="loginCheckError">Логин уже используется</span>
                         <span class="error" id="loginLengthError">Минимальное количество символов - 5</span>
                         <input class="field" type="text" placeholder="Придумайте логин" id="login" name="login"
-                               required>
+                               th:field="*{username}" required>
                     </li>
                     <li class="auth__item">
                         <span class="error" id="passwordError">Пароль не должен иметь кириллицу</span>
                         <span class="error" id="passwordLengthError">Минимальное количество символов - 5</span>
                         <input class="field" type="password" placeholder="Придумайте пароль" id="password"
-                               name="password" required>
+                               name="password" th:field="*{password}" required>
                     </li>
                 </ul>
                 <label class="auth__checkbox custom-checkbox">

@@ -25,7 +25,7 @@
                          height="32">
                 </div>
             </div>
-            <form class="auth__form" action="">
+            <form class="auth__form" th:action="@{/login}" method="POST">
                 <ul class="auth__list">
                     <li class="auth__item">
                         <input class="field" type="text" placeholder="Логин" id="login" name="login">
@@ -37,7 +37,7 @@
                 <p class="auth__info">
                     Нет аккаунта? <a th:href="@{registration}">Зарегистрироваться</a>
                 </p>
-                <button class="auth__btn" type="button">Войти</button>
+                <button class="auth__btn" type="submit">Войти</button>
             </form>
         </div>
         <img class="auth__background" th:src="@{/images/bg-auth.svg}" alt="" width="960">
