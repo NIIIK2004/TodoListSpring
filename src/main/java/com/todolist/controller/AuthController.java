@@ -23,12 +23,12 @@ public class AuthController {
     }
 
     @PostMapping("/registration/save")
-    public String registration(@ModelAttribute("user") User user, BindingResult result, Model model, RedirectAttributes attributes) {
+    public String registration(@ModelAttribute("user") User user, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
         try {
-            userImpl.registerAuthUser(user, attributes);
+            userImpl.registerAuthUser(user, redirectAttributes);
             return "redirect:/login";
         } catch (IllegalArgumentException e) {
-            result.rejectValue("userName", "", e.getMessage());
+            result.rejectValue("username", "", e.getMessage());
             model.addAttribute("user", user);
             return "registration";
         }
