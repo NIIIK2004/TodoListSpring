@@ -17,11 +17,11 @@ public class Task {
     private String name;
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="status_id")
+    @ManyToOne
+    @JoinColumn(name = "status_id")
     private TaskStatus status;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "category_id")
     private TaskCategory category;
 }

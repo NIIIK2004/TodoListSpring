@@ -83,9 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     cSelectCurrent.querySelector('span').textContent = selectText;
                     select.value = selectValue;
                     statusNameSpan.textContent = selectText;
-                    // применить класс от выбранного option к span
-                    statusNameSpan.className = 'name-status name-status--select name-status--' + selectValue;
-                    // Скрываем ошибку после выбора элемента
+                    statusNameSpan.classList.add(`name-status--${selectValue}`);
+
                     select.classList.remove('error');
                     if (select.classList.contains('custom-select--status')) {
                         errorStatusElement.classList.remove('error--active');
