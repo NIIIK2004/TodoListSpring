@@ -59,20 +59,20 @@
                             <select class="select custom-select--status" id="status" name="status" required>
                                 <option value="default" class="name-status">Статус задачи</option>
                                 <th:block th:each="status : ${taskStatuses}">
-                                    <option th:value="${status.id}" th:text="${status.clientStatus}"></option>
+                                    <option th:value="${status.id}" th:text="${status.clientStatus}" th:data-status-name="${status.serverStatus}"></option>
                                 </th:block>
                             </select>
                             <div class="error error--status">Выберите статус задачи</div>
                         </div>
                         <div class="details__select">
-                            <select class="select custom-select&#45;&#45;category" id="category" name="category"
+                            <select class="select custom-select--category" id="category" name="category"
                                     required>
                                 <option class="name-status" value="default">Категория задачи</option>
                                 <th:block th:each="category : ${taskCategories}">
-                                    <option th:value="${category.id}" th:text="${category.clientCategory}"></option>
+                                    <option th:value="${category.id}" th:text="${category.clientCategory}" th:data-category-name="${category.serverCategory}"></option>
                                 </th:block>
                             </select>
-                            <div class="error error&#45;&#45;category">Выберите категорию задачи</div>
+                            <div class="error error__category">Выберите категорию задачи</div>
                         </div>
                     </div>
                     <h2 class="details__name title">

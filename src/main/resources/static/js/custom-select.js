@@ -34,8 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 let option = options[i];
                 if (option.value !== 'default') { // Проверяем, что значение не равно "default"
                     let selectItem = document.createElement('div');
+                    const dataAttributeName = customSelectClass === 'custom-select--status'
+                        ? 'data-status-name'
+                        : customSelectClass === 'custom-select--category'
+                            ? 'data-category-name'
+                            : '';
+
+                    const dataAttribute = option.getAttribute(dataAttributeName);
+
                     // Добавляем класс 'name-status__category' к элементу '.custom-select__item' при наличии класса 'custom-select--category'
-                    selectItem.className = 'custom-select__item name-status ' + (customSelectClass === 'custom-select--category' ? 'name-status__category' : '') + ' name-status--' + option.value;
+                    selectItem.className = 'custom-select__item name-status ' + (customSelectClass === 'custom-select--category' ? 'name-status__category ' : '') + 'name-status--' + dataAttribute;
                     selectItem.dataset.value = option.value;
 
                     // создать и добавить <span> внутри элемента списка
@@ -55,9 +63,17 @@ document.addEventListener('DOMContentLoaded', function () {
             x(), y();
 
             // установим начальные значения в custom-select__current
-            cSelectCurrent.querySelector('span').textContent = options[0].textContent;
-            // убираем классы name-status из custom-select__current
-            cSelectCurrent.querySelector('span').className = 'name-status name-status--select name-status--' + options[0].value;
+            const selectedOption = select.querySelector('option:checked');
+            const dataAttributeName = customSelectClass === 'custom-select--status'
+                ? 'data-status-name'
+                : customSelectClass === 'custom-select--category'
+                    ? 'data-category-name'
+                    : '';
+
+            const dataAttribute = selectedOption.getAttribute(dataAttributeName);
+
+            cSelectCurrent.querySelector('span').textContent = selectedOption ? selectedOption.textContent : '';
+            statusNameSpan.className = 'name-status name-status--select name-status--' + (dataAttribute || 'default');
         };
 
         const toggleClass = () => {
@@ -67,10 +83,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const currentTextValue = () => {
             const selectedOption = select.querySelector('option:checked');
             cSelectCurrent.querySelector('span').textContent = selectedOption ? selectedOption.textContent : '';
-            const selectedValue = selectedOption ? selectedOption.value : '';
+            const dataAttributeName = customSelectClass === 'custom-select--status'
+                ? 'data-status-name'
+                : customSelectClass === 'custom-select--category'
+                    ? 'data-category-name'
+                    : '';
 
-            // комбинация из классов
-            statusNameSpan.className = 'name-status name-status--select name-status--' + selectedValue;
+            const dataAttribute = selectedOption.getAttribute(dataAttributeName);
+
+            statusNameSpan.className = 'name-status name-status--select name-status--' + (dataAttribute || 'default');
         };
 
         const currentValue = () => {
@@ -83,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     cSelectCurrent.querySelector('span').textContent = selectText;
                     select.value = selectValue;
                     statusNameSpan.textContent = selectText;
+                    statusNameSpan.className = 'name-status name-status--select';
                     statusNameSpan.classList.add(`name-status--${selectValue}`);
 
                     select.classList.remove('error');
@@ -102,14 +124,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const mobileFn = () => {
             select.addEventListener('input', () => {
                 if (select.value === 'default') {
-                    select.classList.add('error'); // Добавляем класс ошибки
+                    select.classList.add('error');
                     if (select.classList.contains('custom-select--status')) {
                         errorStatusElement.classList.add('error--active');
                     } else if (select.classList.contains('custom-select--category')) {
                         errorCategoryElement.classList.add('error--active');
                     }
                 } else {
-                    select.classList.remove('error'); // Убираем класс ошибки
+                    select.classList.remove('error');
                     if (select.classList.contains('custom-select--status')) {
                         errorStatusElement.classList.remove('error--active');
                     } else if (select.classList.contains('custom-select--category')) {
