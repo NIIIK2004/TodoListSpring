@@ -56,20 +56,27 @@
                 <form th:action="@{/task/save}" method="post">
                     <div class="details__selectors">
                         <div class="details__select">
-                            <select class="select custom-select--status" id="status" name="status" required>
-                                <option value="default" class="name-status">Статус задачи</option>
+                            <select class="select custom-select--status" id="status" name="status">
+                                <option class="name-status" value="default" data-value="0"
+                                        data-value-name="Статус задачи">Статус задачи
+                                </option>
                                 <th:block th:each="status : ${taskStatuses}">
-                                    <option th:value="${status.id}" th:text="${status.clientStatus}" th:data-status-name="${status.serverStatus}"></option>
+                                    <option th:value="${status.id}" th:text="${status.clientStatus}"
+                                            th:data-value="${status.id}"
+                                            th:data-value-name="${status.serverStatus}"></option>
                                 </th:block>
                             </select>
                             <div class="error error--status">Выберите статус задачи</div>
                         </div>
                         <div class="details__select">
-                            <select class="select custom-select--category" id="category" name="category"
-                                    required>
-                                <option class="name-status" value="default">Категория задачи</option>
+                            <select class="select custom-select--category" id="category" name="category">
+                                <option class="name-status" value="default" data-value="0"
+                                        data-value-name="Категория задачи">Категория задачи
+                                </option>
                                 <th:block th:each="category : ${taskCategories}">
-                                    <option th:value="${category.id}" th:text="${category.clientCategory}" th:data-category-name="${category.serverCategory}"></option>
+                                    <option th:value="${category.id}" th:text="${category.clientCategory}"
+                                            th:data-value="${category.id}"
+                                            th:data-value-name="${category.serverCategory}"></option>
                                 </th:block>
                             </select>
                             <div class="error error__category">Выберите категорию задачи</div>
