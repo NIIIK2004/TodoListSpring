@@ -168,6 +168,7 @@
                     <th>Задача</th>
                     <th>Статус</th>
                     <th>Категория</th>
+                    <th>Описание</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -175,6 +176,9 @@
                     <td th:text="${task.name}"></td>
                     <td th:text="${task.status.clientStatus}"></td>
                     <td th:text="${task.category.clientCategory}"></td>
+                    <td>
+                        <pre th:text="${task.description}"></pre>
+                    </td>
                 </tr>
                 </tbody>
             </table>

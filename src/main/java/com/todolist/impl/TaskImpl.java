@@ -8,9 +8,9 @@ import com.todolist.model.TaskStatus;
 import com.todolist.model.User;
 import com.todolist.repo.TaskRepo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,14 +41,13 @@ public class TaskImpl implements TaskDao {
         return taskRepo.findByUser(user);
     }
 
-    public void saveTask(Task task, Principal principal, Long statusId, Long categoryId) {
+    public void saveTask(Task task, UserDetails userDetails, Long statusId, Long categoryId) {
         TaskStatus taskStatus = taskStatusImpl.findById(statusId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid status id"));
         TaskCategory taskCategory = taskCategoryImpl.findById(categoryId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid category id"));
-        String username = principal.getName();
-        User user = userDao.findByUsername(username);
 
+        User user = userDao.findByUsername(userDetails.getUsername());
         task.setUser(user);
         task.setStatus(taskStatus);
         task.setCategory(taskCategory);

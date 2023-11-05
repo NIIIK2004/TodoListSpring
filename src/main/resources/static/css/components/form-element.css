@@ -6,7 +6,7 @@
 }
 
 .error:not(:last-child) {
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 .error:last-child {

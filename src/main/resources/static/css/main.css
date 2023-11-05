@@ -6,7 +6,6 @@
 
 .widget_date {
     color: #383838;
-    font-family: Ubuntu;
     font-size: 22px;
     font-weight: 500;
 }
@@ -154,7 +153,6 @@
     margin-top: 10px;
 
     color: #A8A8A8;
-    font-family: Ubuntu;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -191,8 +189,6 @@
     bottom: 17%;
     left: 0;
 }
-
-
 
 
 /* status */
@@ -313,7 +309,7 @@
     z-index: 500;
 }
 
-.category_more:hover+.category_action,
+.category_more:hover + .category_action,
 .category_action:hover {
     z-index: 100;
     opacity: 1;
@@ -323,7 +319,7 @@
 
 }
 
-.widget_more:hover+.widget_more_action,
+.widget_more:hover + .widget_more_action,
 .widget_more_action:hover {
     z-index: 100;
     opacity: 1;

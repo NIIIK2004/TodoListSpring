@@ -2,6 +2,8 @@ package com.todolist.controller;
 
 import com.todolist.impl.UserImpl;
 import com.todolist.model.User;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +23,6 @@ public class AuthController {
         model.addAttribute("user", new User());
         return "registration";
     }
-
     @PostMapping("/registration/save")
     public String registration(@ModelAttribute("user") User user, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
         try {
@@ -33,9 +34,14 @@ public class AuthController {
             return "registration";
         }
     }
-
     @GetMapping("/login")
     public String login() {
         return "auth";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
+        userImpl.logout(request, response);
+        return "redirect:/login?logout";
     }
 }
