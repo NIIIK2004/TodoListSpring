@@ -24,4 +24,8 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private TaskCategory category;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
