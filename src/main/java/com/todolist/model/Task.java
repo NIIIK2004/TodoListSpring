@@ -31,4 +31,7 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @OneToOne(mappedBy = "task", cascade = CascadeType.ALL)
+    private TaskDeletes taskDeletes;
 }

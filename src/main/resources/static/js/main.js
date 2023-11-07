@@ -15,3 +15,17 @@ var animateButton = function(e) {
   for (var i = 0; i < bubblyButtons.length; i++) {
     bubblyButtons[i].addEventListener('click', animateButton, false);
   }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    let currentDate = new Date();
+    let day = String(currentDate.getDate()).padStart(2, '0');
+    let month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    let year = currentDate.getFullYear();
+
+    let formattedDate = day + '.' + month + '.' + year;
+
+    let widgetDateElement = document.querySelector('.widget_date');
+    widgetDateElement.textContent = formattedDate;
+});

@@ -2,10 +2,7 @@ package com.todolist.impl;
 
 import com.todolist.dao.TaskDao;
 import com.todolist.dao.UserDao;
-import com.todolist.model.Task;
-import com.todolist.model.TaskCategory;
-import com.todolist.model.TaskStatus;
-import com.todolist.model.User;
+import com.todolist.model.*;
 import com.todolist.repo.TaskRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,6 +36,17 @@ public class TaskImpl implements TaskDao {
 
     public List<Task> findByUser(User user) {
         return taskRepo.findByUser(user);
+    }
+
+    public List<TaskDeletes> findDeletedTasksByUser(User user) {
+        return taskRepo.findDeletedTasksByUser(user);
+    }
+
+    public void moveTaskInDeleted(Task task) {
+        TaskDeletes taskDeletes = new TaskDeletes();
+        taskDeletes.setTask(task);
+
+
     }
 
     public void saveTask(Task task, UserDetails userDetails, Long statusId, Long categoryId) {

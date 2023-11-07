@@ -150,8 +150,6 @@
 }
 
 .category_description {
-    margin-top: 10px;
-
     color: #A8A8A8;
     font-size: 15px;
     font-style: normal;
@@ -161,10 +159,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 360px;
+    height: 100px;
+    margin-top: 10px;
 }
 
 .category_bottom {
-    margin-top: 50px;
+    position: absolute;
+    bottom: 16px;
+    width: 88%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -190,7 +192,6 @@
     left: 0;
 }
 
-
 /* status */
 .category_status {
     padding: 6px 15px;
@@ -208,18 +209,9 @@
     color: var(--accent);
 }
 
-.important::before {
-    content: "Важноe";
-    background: rgba(255, 255, 255, 0.15);
-}
-
 .byfan {
     background: rgba(94, 84, 216, 0.15);
     color: #5E54D8;
-}
-
-.byfan::before {
-    content: "По фану";
 }
 
 .today {
@@ -227,17 +219,9 @@
     color: #0AD28A;
 }
 
-.today::before {
-    content: "За сегодня";
-}
-
 .note {
     color: #4C9EEA;
     background: rgba(76, 158, 234, 0.15);
-}
-
-.note::before {
-    content: "Заметка";
 }
 
 .week {
@@ -245,17 +229,9 @@
     background: rgba(234, 76, 96, 0.15);
 }
 
-.week::before {
-    content: "На неделю";
-}
-
 .unimportant {
     color: #FF9F0E;
     background: rgba(255, 159, 14, 0.15);
-}
-
-.unimportant::before {
-    content: "Неважное";
 }
 
 .month {
@@ -263,17 +239,9 @@
     background: rgba(255, 202, 13, 0.15);
 }
 
-.month::before {
-    content: "На месяц";
-}
-
 .year {
     color: #891515;
     background: rgba(137, 21, 21, 0.15);
-}
-
-.year::before {
-    content: "На год";
 }
 
 /* status */
@@ -467,3 +435,46 @@
 }
 
 /* animate */
+
+.addTaskAndDelete__wrapper {
+    display: flex;
+    position: fixed;
+    bottom: 50px;
+    gap: 12px;
+    right: 172px;
+}
+
+.addTaskAndDelete__wrapper-delete {
+    position: relative;
+    width: 57px;
+    height: 57px;
+    border-radius: 13px;
+    padding: 13px;
+}
+
+.addTaskAndDelete__wrapper-delete::after {
+    position: absolute;
+    content: "Дельнуть";
+    width: 20px;
+    height: 22px;
+    background: url("");
+}
+.addTaskAndDelete__wrapper-add {
+    position: relative;
+    display: inline-flex;
+    padding: 17px;
+    justify-content: center;
+    gap: 8px;
+
+    color: #FFF;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 100%;
+
+    border-radius: 13px;
+    background: var(--accent);
+}
+
+
+
+

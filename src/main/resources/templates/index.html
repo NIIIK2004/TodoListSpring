@@ -45,8 +45,9 @@
     <div class="container">
         <div class="widget__wrap">
             <div class="widget__left">
-                <span class="widget_date">09.09.2023</span>
-                <h1 class="widget_title title">Добрый день, <span style="color: var(--accent);">Артем!</span></h1>
+                <span class="widget_date">Дата</span>
+                <h1 class="widget_title title">Добрый день, <span style="color: var(--accent);"
+                                                                  th:text="${user.getName()} + '!'"></span></h1>
             </div>
             <div class="widget__right">
                 <a href="" class="widget_share">
@@ -158,30 +159,11 @@
                     </span>
             </a>
         </div>
+
     </div>
 
     <section class="tasks">
         <div class="container">
-            <table>
-                <thead>
-                <tr>
-                    <th>Задача</th>
-                    <th>Статус</th>
-                    <th>Категория</th>
-                    <th>Описание</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="task : ${tasks}">
-                    <td th:text="${task.name}"></td>
-                    <td th:text="${task.status.clientStatus}"></td>
-                    <td th:text="${task.category.clientCategory}"></td>
-                    <td>
-                        <pre th:text="${task.description}"></pre>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
             <div class="tasks__wrapper one-view active">
 
                 <div class="tasks_category">
@@ -206,9 +188,10 @@
                             </span>
                     </div>
                     <div class="category_blocks">
-                        <div class="category_block">
+                        <div class="category_block" th:each="task: ${tasks}"
+                             th:if="${task.category.clientCategory} == 'Работа'">
                             <div class="category_top">
-                                <span class="category_status note"></span>
+                                <span class="category_status note" th:text="${task.status.clientStatus}"></span>
                                 <span class="category_more">
                                         <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -219,7 +202,7 @@
                                     </span>
                                 <div class="category_action">
                                     <span>Действия:</span>
-                                    <a style="color: var(--accent);" href="delete"><span
+                                    <a style="color: var(--accent);" th:href="@{/tasks/{id}/delete(id=${task.id})}"><span
                                             style="margin-right: 7px;"><svg width="14" height="16"
                                                                             viewBox="0 0 14 16" fill="none"
                                                                             xmlns="http://www.w3.org/2000/svg">
@@ -248,11 +231,8 @@
                                 </div>
                             </div>
                             <div class="category_text">
-                                <h3 class="category_title">Срочно сдать диплом до 31 декабря dsfsdfsdfsdfsdfsdfs
-                                </h3>
-                                <p class="category_description">Очень быстро время летит, как . Нужно будет
-                                    готовиться и все сдавать и показывать Аркадию и Мартыненко. Капчу еще делать эту
-                                    невыносимую а потом еще что то сложное невозможное...</p>
+                                <h3 class="category_title" th:text="${task.name}"></h3>
+                                <p class="category_description" th:text="${task.description}"></p>
                             </div>
 
                             <span class="block-line">
@@ -263,212 +243,11 @@
                                 </span>
 
                             <div class="category_bottom">
-                                <span class="category_number-task">Задача #1</span>
+                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
                                 <span class="category_date-task">Сентябрь, 9 2023</span>
                             </div>
                             <div class="auxiliary">
-                                <a href="#">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-
-                        <div class="category_block">
-                            <div class="category_top">
-                                <span class="category_status important"></span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);" href="delete"><span
-                                            style="margin-right: 7px;"><svg width="14" height="16"
-                                                                            viewBox="0 0 14 16" fill="none"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                          fill="#EA4C60"/>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                          fill="#EA4C60"/>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                          fill="#EA4C60"/>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                          fill="#EA4C60"/>
-                                                </svg>
-                                            </span>Удалить запись</a>
-                                    <a style="color: #FF9F0E;" href="edit"><span style="margin-right: 7px;"><svg
-                                            width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                          fill="#FF9F0E"/>
-                                                </svg>
-                                            </span> Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title">Срочно сдать диплом до 31 декабря dsfsdfsdfsdfsdfsdfs
-                                </h3>
-                                <p class="category_description">Очень быстро время летит, как . Нужно будет
-                                    готовиться и все сдавать и показывать Аркадию и Мартыненко. Капчу еще делать эту
-                                    невыносимую а потом еще что то сложное невозможное...</p>
-                            </div>
-
-                            <span class="block-line">
-                                    <svg width="409" height="1" viewBox="0 0 409 1" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="409" height="1" fill="#D3D3D3"/>
-                                    </svg>
-                                </span>
-
-                            <div class="category_bottom">
-                                <span class="category_number-task">Задача #1</span>
-                                <span class="category_date-task">Сентябрь, 9 2023</span>
-                            </div>
-                            <div class="auxiliary">
-                                <a href="#">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-
-                        <div class="category_block">
-                            <div class="category_top">
-                                <span class="category_status important"></span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);" href="delete"><span
-                                            style="margin-right: 7px;"><svg width="14" height="16"
-                                                                            viewBox="0 0 14 16" fill="none"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                          fill="#EA4C60"/>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                          fill="#EA4C60"/>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                          fill="#EA4C60"/>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                          fill="#EA4C60"/>
-                                                </svg>
-                                            </span>Удалить запись</a>
-                                    <a style="color: #FF9F0E;" href="edit"><span style="margin-right: 7px;"><svg
-                                            width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                          fill="#FF9F0E"/>
-                                                </svg>
-                                            </span> Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title">Срочно сдать диплом до 31 декабря dsfsdfsdfsdfsdfsdfs
-                                </h3>
-                                <p class="category_description">Очень быстро время летит, как . Нужно будет
-                                    готовиться и все сдавать и показывать Аркадию и Мартыненко. Капчу еще делать эту
-                                    невыносимую а потом еще что то сложное невозможное...</p>
-                            </div>
-
-                            <span class="block-line">
-                                    <svg width="409" height="1" viewBox="0 0 409 1" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="409" height="1" fill="#D3D3D3"/>
-                                    </svg>
-                                </span>
-
-                            <div class="category_bottom">
-                                <span class="category_number-task">Задача #1</span>
-                                <span class="category_date-task">Сентябрь, 9 2023</span>
-                            </div>
-                            <div class="auxiliary">
-                                <a href="#">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-
-                        <div class="category_block">
-                            <div class="category_top">
-                                <span class="category_status today"></span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);" href="delete"><span
-                                            style="margin-right: 7px;"><svg width="14" height="16"
-                                                                            viewBox="0 0 14 16" fill="none"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                          fill="#EA4C60"/>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                          fill="#EA4C60"/>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                          fill="#EA4C60"/>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                          fill="#EA4C60"/>
-                                                </svg>
-                                            </span>Удалить запись</a>
-                                    <a style="color: #FF9F0E;" href="edit"><span style="margin-right: 7px;"><svg
-                                            width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                          fill="#FF9F0E"/>
-                                                </svg>
-                                            </span> Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title">Срочно сдать диплом до 31 декабря dsfsdfsdfsdfsdfsdfs
-                                </h3>
-                                <p class="category_description">Очень быстро время летит, как . Нужно будет
-                                    готовиться и все сдавать и показывать Аркадию и Мартыненко. Капчу еще делать эту
-                                    невыносимую а потом еще что то сложное невозможное...</p>
-                            </div>
-
-                            <span class="block-line">
-                                    <svg width="409" height="1" viewBox="0 0 409 1" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="409" height="1" fill="#D3D3D3"/>
-                                    </svg>
-                                </span>
-
-                            <div class="category_bottom">
-                                <span class="category_number-task">Задача #1</span>
-                                <span class="category_date-task">Сентябрь, 9 2023</span>
-                            </div>
-                            <div class="auxiliary">
-                                <a href="#">Детали задачи</a>
+                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
                                 <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
                                    href="#">Выполнено</a>
                             </div>
@@ -2955,6 +2734,15 @@
             </div>
         </div>
     </section>
+
+    <div class="addTaskAndDelete">
+        <div class="container">
+                <div class="addTaskAndDelete__wrapper">
+                    <a th:href="@{/task-delete}" class="addTaskAndDelete__wrapper-delete"></a>
+                    <a th:href="@{/task-add}" class="addTaskAndDelete__wrapper-add">Добавить задачу</a>
+                </div>
+        </div>
+    </div>
 </main>
 </body>
 <script th:src="@{/js/swithes-view.js}"></script>

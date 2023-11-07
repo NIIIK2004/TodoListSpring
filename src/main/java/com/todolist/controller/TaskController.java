@@ -11,10 +11,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -30,6 +27,7 @@ public class TaskController {
         model.addAttribute("tasks", taskImpl.findByUser(user));
         model.addAttribute("taskStatuses", taskStatusImpl.findAll());
         model.addAttribute("taskCategories", taskCategoryImpl.findAll());
+        model.addAttribute("user", user);
         return "index";
     }
 
@@ -48,4 +46,20 @@ public class TaskController {
         taskImpl.saveTask(task, user, statusId, categoryId);
         return "redirect:/";
     }
+
+    @GetMapping("/tasks/{id}/details")
+    public String taskDetails(@PathVariable("id") Long id, Model model) {
+        Task task = taskImpl.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid" + id));
+        model.addAttribute("task", task);
+        return "details";
+    }
+
+    @GetMapping("/tasks/{id}/delete")
+    public String taskDelete(@PathVariable("id") Long id) {
+        Task task = taskImpl.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid" + id));
+        taskImpl.moveTaskInDeleted(task);
+
+        return "redirect:/";
+    }
+
 }
