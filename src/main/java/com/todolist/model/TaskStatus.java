@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -17,4 +19,6 @@ public class TaskStatus {
     private Long id;
     private String serverStatus;
     private String clientStatus;
+    @OneToMany(mappedBy = "status")
+    private List<Task> tasks;
 }
