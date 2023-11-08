@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Entity
 @Table(name = "task_deletes")
@@ -21,4 +20,7 @@ public class TaskDeletes {
     @JoinColumn(name = "task_id")
     private Task task;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

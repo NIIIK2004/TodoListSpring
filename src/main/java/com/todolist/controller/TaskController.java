@@ -24,6 +24,7 @@ public class TaskController {
     @GetMapping("/")
     public String tasksPage(@AuthenticationPrincipal UserDetails userDetails, Model model) {
         User user = userImpl.findByUsername(userDetails.getUsername());
+        model.addAttribute("user", user);
         model.addAttribute("tasks", taskImpl.findByUser(user));
         model.addAttribute("taskStatuses", taskStatusImpl.findAll());
         model.addAttribute("taskCategories", taskCategoryImpl.findAll());
@@ -35,7 +36,7 @@ public class TaskController {
     public String addTaskPage(Model model) {
         model.addAttribute("taskStatuses", taskStatusImpl.findAll());
         model.addAttribute("taskCategories", taskCategoryImpl.findAll());
-        return "add_task";
+        return "task-add";
     }
 
     @PostMapping("/task/save")
@@ -55,11 +56,9 @@ public class TaskController {
     }
 
     @GetMapping("/tasks/{id}/delete")
-    public String taskDelete(@PathVariable("id") Long id) {
+    public String taskDelete(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails user) {
         Task task = taskImpl.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid" + id));
-        taskImpl.moveTaskInDeleted(task);
-
+        taskImpl.moveTaskInDeleted(task, user);
         return "redirect:/";
     }
-
 }

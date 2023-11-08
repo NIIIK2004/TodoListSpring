@@ -3,11 +3,13 @@ package com.todolist.impl;
 import com.todolist.dao.TaskDao;
 import com.todolist.dao.UserDao;
 import com.todolist.model.*;
+import com.todolist.repo.TaskDeleteRepo;
 import com.todolist.repo.TaskRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +17,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TaskImpl implements TaskDao {
     private final TaskRepo taskRepo;
+    private final TaskDeleteRepo taskDeleteRepo;
     private final UserDao userDao;
     private final TaskStatusImpl taskStatusImpl;
     private final TaskCategoryImpl taskCategoryImpl;
@@ -38,15 +41,19 @@ public class TaskImpl implements TaskDao {
         return taskRepo.findByUser(user);
     }
 
-    public List<TaskDeletes> findDeletedTasksByUser(User user) {
-        return taskRepo.findDeletedTasksByUser(user);
+    public List<TaskDeletes> findArchivedTasksByUser(User user) {
+        return taskRepo.findArchivedTasksByUser(user);
     }
 
-    public void moveTaskInDeleted(Task task) {
-        TaskDeletes taskDeletes = new TaskDeletes();
-        taskDeletes.setTask(task);
+    public void moveTaskInDeleted(Task task, UserDetails userDetails) {
+        User user = userDao.findByUsername(userDetails.getUsername());
+        TaskDeletes taskDelete = new TaskDeletes();
+        taskDelete.setTask(task);
+        taskDelete.setUser(user);
+        task.setArchived(true);
 
-
+        taskDeleteRepo.save(taskDelete);
+        taskRepo.save(task);
     }
 
     public void saveTask(Task task, UserDetails userDetails, Long statusId, Long categoryId) {
@@ -57,6 +64,7 @@ public class TaskImpl implements TaskDao {
 
         User user = userDao.findByUsername(userDetails.getUsername());
         task.setUser(user);
+        task.setDate(LocalDate.now());
         task.setStatus(taskStatus);
         task.setCategory(taskCategory);
         save(task);

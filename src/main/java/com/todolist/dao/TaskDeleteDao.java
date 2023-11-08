@@ -7,7 +7,6 @@ import java.util.Optional;
 
 public interface TaskDeleteDao {
     void save(TaskDeletes taskDeletes);
-
     List<TaskDeletes> findAll();
     Optional<TaskDeletes> findById(Long id);
 }

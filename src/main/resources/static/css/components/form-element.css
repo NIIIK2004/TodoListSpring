@@ -13,6 +13,10 @@
     margin-bottom: 8px;
 }
 
+.error--selector {
+    margin-top: 5px;
+}
+
 .error--active {
     display: block;
 }

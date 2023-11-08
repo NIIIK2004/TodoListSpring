@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const selects = document.querySelectorAll('.select');
-    const errorStatusElement = document.querySelector('.error--status');
-    const errorCategoryElement = document.querySelector('.error--category');
+    const errorStatusElement = document.querySelector('#statusError');
+    const errorCategoryElement = document.querySelector('#categoryError');
+    const statusError = document.getElementById('statusError');
+    const categoryError = document.getElementById('categoryError');
 
     for (let i = 0; i < selects.length; i++) {
         const select = selects[i];
@@ -98,22 +100,25 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         const mobileFn = () => {
-            select.addEventListener('input', () => {
+            select.addEventListener('change', () => {
                 if (select.value === 'default') {
                     select.classList.add('error');
                     if (select.classList.contains('custom-select--status')) {
                         errorStatusElement.classList.add('error--active');
+                        statusError.style.display = 'block';
                     } else if (select.classList.contains('custom-select--category')) {
                         errorCategoryElement.classList.add('error--active');
+                        categoryError.style.display = 'block';
                     }
                 } else {
                     select.classList.remove('error');
                     if (select.classList.contains('custom-select--status')) {
                         errorStatusElement.classList.remove('error--active');
+                        statusError.style.display = 'none';
                     } else if (select.classList.contains('custom-select--category')) {
                         errorCategoryElement.classList.remove('error--active');
+                        categoryError.style.display = 'none';
                     }
-                    cSelectCurrent.querySelector('span').textContent = select.value;
                 }
             });
         };
@@ -153,8 +158,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 select.classList.add('error');
                 if (select.classList.contains('custom-select--status')) {
                     errorStatusElement.classList.add('error--active');
+                    statusError.style.display = 'block';
                 } else if (select.classList.contains('custom-select--category')) {
                     errorCategoryElement.classList.add('error--active');
+                    categoryError.style.display = 'block';
                 }
                 hasError = true;
             }
