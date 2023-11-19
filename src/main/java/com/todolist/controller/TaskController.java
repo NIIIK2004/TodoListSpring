@@ -7,6 +7,8 @@ import com.todolist.impl.UserImpl;
 import com.todolist.model.Task;
 import com.todolist.model.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,7 @@ public class TaskController {
         User user = userImpl.findByUsername(userDetails.getUsername());
         model.addAttribute("user", user);
         model.addAttribute("tasks", taskImpl.findByUser(user));
+        model.addAttribute("categoriesWithTasks", taskCategoryImpl.findAllWithTasks());
         model.addAttribute("taskStatuses", taskStatusImpl.findAll());
         model.addAttribute("taskCategories", taskCategoryImpl.findAll());
         model.addAttribute("user", user);
@@ -55,10 +58,16 @@ public class TaskController {
         return "details";
     }
 
-    @GetMapping("/tasks/{id}/delete")
-    public String taskDelete(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails user) {
-        Task task = taskImpl.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid" + id));
-        taskImpl.moveTaskInDeleted(task, user);
-        return "redirect:/";
+    @DeleteMapping("/tasks/{id}/delete")
+    public ResponseEntity<String> deleteTask(@PathVariable Long id, @AuthenticationPrincipal UserDetails user) {
+        try {
+            Task task = taskImpl.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid" + id));
+            taskImpl.moveTaskInDeleted(task, user);
+            return ResponseEntity.ok().body("{\"message\": \"Task successfully deleted\"}");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 }

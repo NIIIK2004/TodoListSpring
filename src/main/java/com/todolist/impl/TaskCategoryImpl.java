@@ -23,4 +23,9 @@ public class TaskCategoryImpl implements TaskCategoryDao {
     public Optional<TaskCategory> findById(Long id) {
         return taskCategoryRepo.findById(id);
     }
+
+    @Override
+    public List<TaskCategory> findAllWithTasks() {
+        return taskCategoryRepo.findAllWithTasks();
+    }
 }

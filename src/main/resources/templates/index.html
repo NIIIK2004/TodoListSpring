@@ -2,74 +2,72 @@
 <html lang="ru" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoList | Главная</title>
-    <link rel="icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
-    <link rel="shortcut icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoList | Главная</title>
+  <link rel="icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+  <link rel="shortcut icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body class="body">
 <header th:replace="fragments/header-main"></header>
 <main>
-    <div class="container">
-        <div class="widget__wrap">
-            <div class="widget__left">
-                <span class="widget_date">Дата</span>
-                <h1 class="widget_title title">Добрый день,
-                    <span th:text="${user.getName()} + '!'"></span>
-                </h1>
-            </div>
-            <div class="widget__right">
-                <a href="" class="widget_share">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M4 11C4.55228 11 5 11.4477 5 12V20C5 20.2652 5.10536 20.5196 5.29289 20.7071C5.48043 20.8946 5.73478 21 6 21H18C18.2652 21 18.5196 20.8946 18.7071 20.7071C18.8946 20.5196 19 20.2652 19 20V12C19 11.4477 19.4477 11 20 11C20.5523 11 21 11.4477 21 12V20C21 20.7957 20.6839 21.5587 20.1213 22.1213C19.5587 22.6839 18.7957 23 18 23H6C5.20435 23 4.44129 22.6839 3.87868 22.1213C3.31607 21.5587 3 20.7956 3 20V12C3 11.4477 3.44772 11 4 11Z"
-                              fill="#121212"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M11.2929 1.29289C11.6834 0.902369 12.3166 0.902369 12.7071 1.29289L16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711C16.3166 7.09763 15.6834 7.09763 15.2929 6.70711L12 3.41421L8.70711 6.70711C8.31658 7.09763 7.68342 7.09763 7.29289 6.70711C6.90237 6.31658 6.90237 5.68342 7.29289 5.29289L11.2929 1.29289Z"
-                              fill="#121212"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M12 1C12.5523 1 13 1.44772 13 2V15C13 15.5523 12.5523 16 12 16C11.4477 16 11 15.5523 11 15V2C11 1.44772 11.4477 1 12 1Z"
-                              fill="#121212"/>
-                    </svg>
-                </a>
-                <a href="" class="widget_more">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12Z"
-                              fill="#121212"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12Z"
-                              fill="#121212"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12Z"
-                              fill="#121212"/>
-                    </svg>
+  <div class="container">
+    <div class="widget__wrap">
+      <div class="widget__left">
+        <span class="widget_date">Дата</span>
+        <h1 class="widget_title title">Добрый день,
+          <span th:text="${user.getName()} + '!'"></span>
+        </h1>
+      </div>
+      <div class="widget__right">
+        <a href="" class="widget_share">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M4 11C4.55228 11 5 11.4477 5 12V20C5 20.2652 5.10536 20.5196 5.29289 20.7071C5.48043 20.8946 5.73478 21 6 21H18C18.2652 21 18.5196 20.8946 18.7071 20.7071C18.8946 20.5196 19 20.2652 19 20V12C19 11.4477 19.4477 11 20 11C20.5523 11 21 11.4477 21 12V20C21 20.7957 20.6839 21.5587 20.1213 22.1213C19.5587 22.6839 18.7957 23 18 23H6C5.20435 23 4.44129 22.6839 3.87868 22.1213C3.31607 21.5587 3 20.7956 3 20V12C3 11.4477 3.44772 11 4 11Z"
+                  fill="#121212"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M11.2929 1.29289C11.6834 0.902369 12.3166 0.902369 12.7071 1.29289L16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711C16.3166 7.09763 15.6834 7.09763 15.2929 6.70711L12 3.41421L8.70711 6.70711C8.31658 7.09763 7.68342 7.09763 7.29289 6.70711C6.90237 6.31658 6.90237 5.68342 7.29289 5.29289L11.2929 1.29289Z"
+                  fill="#121212"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 1C12.5523 1 13 1.44772 13 2V15C13 15.5523 12.5523 16 12 16C11.4477 16 11 15.5523 11 15V2C11 1.44772 11.4477 1 12 1Z"
+                  fill="#121212"/>
+          </svg>
+        </a>
+        <a href="" class="widget_more">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12Z"
+                  fill="#121212"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12Z"
+                  fill="#121212"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12Z"
+                  fill="#121212"/>
+          </svg>
 
-                </a>
-            </div>
-        </div>
-        <div class="switches__wrapper">
-            <a href="#" class="switches_buttons btn-active" onclick="showBlock('one-view')">Заметки
-                <span>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M8 18C8 17.4477 8.44772 17 9 17H15C15.5523 17 16 17.4477 16 18C16 18.5523 15.5523 19 15 19H9C8.44772 19 8 18.5523 8 18Z"
-                                  fill="white"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M9 22C9 21.4477 9.44772 21 10 21H14C14.5523 21 15 21.4477 15 22C15 22.5523 14.5523 23 14 23H10C9.44772 23 9 22.5523 9 22Z"
-                                  fill="white"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M7.05025 3.05025C8.36301 1.7375 10.1435 1 12 1C13.8565 1 15.637 1.7375 16.9497 3.05025C18.2605 4.36103 18.9978 6.13813 19 7.99162C19.0123 8.78605 18.8568 9.57416 18.5438 10.3045C18.2326 11.0306 17.7727 11.6833 17.1937 12.2206C16.5443 12.8733 16.2066 13.456 16.0735 14.1807C15.9738 14.7238 15.4525 15.0833 14.9093 14.9835C14.3662 14.8838 14.0067 14.3625 14.1065 13.8193C14.3324 12.589 14.9311 11.6547 15.7929 10.7929C15.8026 10.7831 15.8126 10.7736 15.8227 10.7643C16.2017 10.4154 16.5026 9.99017 16.7055 9.51666C16.9085 9.04315 17.0089 8.53205 17.0001 8.01696L17 8C17 6.67392 16.4732 5.40215 15.5355 4.46447C14.5979 3.52678 13.3261 3 12 3C10.6739 3 9.40215 3.52678 8.46447 4.46447C7.52678 5.40215 7 6.67392 7 8C7 8.79486 7.16385 9.74236 8.19272 10.7785C9.06407 11.5822 9.65861 12.6414 9.89067 13.8043C9.99874 14.3459 9.6473 14.8726 9.10569 14.9807C8.56409 15.0887 8.03741 14.7373 7.92933 14.1957C7.77899 13.4423 7.39218 12.7564 6.82519 12.238C6.8142 12.2279 6.80343 12.2176 6.79289 12.2071C5.29462 10.7088 5 9.20145 5 8C5 6.14348 5.7375 4.36301 7.05025 3.05025Z"
-                                  fill="white"/>
-                        </svg>
-                    </span>
-            </a>
-            <a href="#" class="switches_buttons" onclick="showBlock('two-view')">В прогрессе
-                <span>
+        </a>
+      </div>
+    </div>
+    <div class="switches__wrapper">
+      <a href="#" class="switches_buttons btn-active" onclick="showBlock('one-view')">Заметки
+        <span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8 18C8 17.4477 8.44772 17 9 17H15C15.5523 17 16 17.4477 16 18C16 18.5523 15.5523 19 15 19H9C8.44772 19 8 18.5523 8 18Z"
+                  fill="white"/><path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M9 22C9 21.4477 9.44772 21 10 21H14C14.5523 21 15 21.4477 15 22C15 22.5523 14.5523 23 14 23H10C9.44772 23 9 22.5523 9 22Z"
+                                      fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.05025 3.05025C8.36301 1.7375 10.1435 1 12 1C13.8565 1 15.637 1.7375 16.9497 3.05025C18.2605 4.36103 18.9978 6.13813 19 7.99162C19.0123 8.78605 18.8568 9.57416 18.5438 10.3045C18.2326 11.0306 17.7727 11.6833 17.1937 12.2206C16.5443 12.8733 16.2066 13.456 16.0735 14.1807C15.9738 14.7238 15.4525 15.0833 14.9093 14.9835C14.3662 14.8838 14.0067 14.3625 14.1065 13.8193C14.3324 12.589 14.9311 11.6547 15.7929 10.7929C15.8026 10.7831 15.8126 10.7736 15.8227 10.7643C16.2017 10.4154 16.5026 9.99017 16.7055 9.51666C16.9085 9.04315 17.0089 8.53205 17.0001 8.01696L17 8C17 6.67392 16.4732 5.40215 15.5355 4.46447C14.5979 3.52678 13.3261 3 12 3C10.6739 3 9.40215 3.52678 8.46447 4.46447C7.52678 5.40215 7 6.67392 7 8C7 8.79486 7.16385 9.74236 8.19272 10.7785C9.06407 11.5822 9.65861 12.6414 9.89067 13.8043C9.99874 14.3459 9.6473 14.8726 9.10569 14.9807C8.56409 15.0887 8.03741 14.7373 7.92933 14.1957C7.77899 13.4423 7.39218 12.7564 6.82519 12.238C6.8142 12.2279 6.80343 12.2176 6.79289 12.2071C5.29462 10.7088 5 9.20145 5 8C5 6.14348 5.7375 4.36301 7.05025 3.05025Z"
+                  fill="white"/></svg>
+        </span>
+      </a>
+      <a href="#" class="switches_buttons" onclick="showBlock('two-view')">В прогрессе
+        <span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12Z"
@@ -94,9 +92,9 @@
                                   fill="#EA4C60"/>
                         </svg>
                     </span>
-            </a>
-            <a href="#" class="switches_buttons" onclick="showBlock('three-view')">Сделано
-                <span>
+      </a>
+      <a href="#" class="switches_buttons" onclick="showBlock('three-view')">Сделано
+        <span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M8 18C8 17.4477 8.44772 17 9 17H15C15.5523 17 16 17.4477 16 18C16 18.5523 15.5523 19 15 19H9C8.44772 19 8 18.5523 8 18Z"
@@ -112,9 +110,9 @@
                                   fill="#EA4C60"/>
                         </svg>
                     </span>
-            </a>
-            <a href="#" class="switches_buttons">Упорядочить
-                <span>
+      </a>
+      <a href="#" class="switches_buttons">Упорядочить
+        <span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M4 3C3.44772 3 3 3.44772 3 4V8C3 8.55228 3.44772 9 4 9H20C20.5523 9 21 8.55228 21 8V4C21 3.44772 20.5523 3 20 3H4ZM1 4C1 2.34315 2.34315 1 4 1H20C21.6569 1 23 2.34315 23 4V8C23 9.65685 21.6569 11 20 11H4C2.34315 11 1 9.65685 1 8V4Z"
@@ -130,1665 +128,166 @@
                                   fill="#EA4C60"/>
                         </svg>
                     </span>
-            </a>
-        </div>
+      </a>
     </div>
-    <section class="tasks">
-        <div class="container">
-            <div class="actions">
-                <a th:href="@{/task-delete}" class="actions__btn actions__btn--delete"></a>
-                <a th:href="@{/task-add}" class="actions__btn actions__btn--add">Добавить задачу</a>
+  </div>
+  <section class="tasks">
+    <div class="container">
+      <div class="actions">
+        <a th:href="@{/task-delete}" class="actions__btn actions__btn--delete"></a>
+        <a th:href="@{/task-add}" class="actions__btn actions__btn--add">Добавить задачу</a>
+      </div>
+      <div class="tasks__wrapper one-view active">
+        <div class="tasks_category" th:each="category: ${categoriesWithTasks}">
+          <div class="category_title">
+            <h2 class="category__title" th:classappend="'category__title--' + ${category.serverCategory}"
+                th:text="${category.clientCategory}"></h2>
+            <img class="category__title-img" width="25" height="25"
+                 th:src="@{'/images/icons/' + ${category.serverCategory} + '.svg'}" alt="icon">
+          </div>
+          <div class="category_blocks">
+            <div class="category_block" th:each="task: ${category.tasks}" th:if="${!task.archived}">
+              <div class="category_top">
+                <span th:class="'category_status ' + ${task.status.serverStatus}"
+                      th:text="${task.status.clientStatus}"></span>
+                <span class="category_more">
+                  <svg width="23" height="6" viewBox="0 0 23 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                    <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                    <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                  </svg>
+                </span>
+                <div class="category_action">
+                  <span>Действия:</span>
+                  <a class="category__btn category__btn--delete" th:data-task-id="${task.id}"
+                     th:href="@{/tasks/{id}/delete(id=${task.id})}">
+                    Удалить запись
+                  </a>
+                  <a class="category__btn category__btn--edit" href="edit">
+                    Редактировать запись</a>
+                </div>
+              </div>
+              <div class="category_text">
+                <h3 class="category_title" th:text="${task.name}"></h3>
+                <pre class="category_description" th:text="${task.description}"></pre>
+              </div>
+              <div class="category_bottom">
+                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
+                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
+              </div>
+              <div class="auxiliary">
+                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
+                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
+                   href="#">Выполнено</a>
+              </div>
             </div>
-            <div class="tasks__wrapper one-view active">
-                <div class="tasks_category">
-                    <div class="category_title">
-                        <h2 class="category__title category__title--work">
-                            Работа
-                            <img class="category__title-img" width="25" height="25"
-                                 th:src="@{/images/icons/work.svg}" alt="icon">
-                        </h2>
-                    </div>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Работа'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--study">
-                        Учеба
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/study.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Учеба'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--personal">
-                        Личное
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/personal.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Личное'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--favorite">
-                        Избранное
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/favorite.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Избранное'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--home">
-                        Дом
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/home.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Дом'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--friends">
-                        Друзья
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/friends.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Друзья'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--game">
-                        Игры
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/game.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Игры'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--food">
-                        Еда
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/food.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Еда'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tasks__wrapper two-view">
-                <div class="tasks_category">
-                    <div class="category_title">
-                        <h2 class="category__title category__title--work">
-                            Работа2
-                            <img class="category__title-img" width="25" height="25"
-                                 th:src="@{/images/icons/work.svg}" alt="icon">
-                        </h2>
-                    </div>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Работа'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--study">
-                        Учеба
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/study.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Учеба'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--personal">
-                        Личное
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/personal.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Личное'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--favorite">
-                        Избранное
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/favorite.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Избранное'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--home">
-                        Дом
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/home.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Дом'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--friends">
-                        Друзья
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/friends.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Друзья'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--game">
-                        Игры
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/game.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Игры'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--food">
-                        Еда
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/food.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Еда'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tasks__wrapper three-view">
-                <div class="tasks_category">
-                    <div class="category_title">
-                        <h2 class="category__title category__title--work">
-                            Работа
-                            <img class="category__title-img" width="25" height="25"
-                                 th:src="@{/images/icons/work.svg}" alt="icon">
-                        </h2>
-                    </div>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Работа'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--study">
-                        Учеба
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/study.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Учеба'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--personal">
-                        Личное
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/personal.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Личное'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--favorite">
-                        Избранное
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/favorite.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Избранное'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--home">
-                        Дом
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/home.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Дом'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--friends">
-                        Друзья
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/friends.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Друзья'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--game">
-                        Игры
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/game.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Игры'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tasks_category">
-                    <h2 class="category__title category__title--food">
-                        Еда
-                        <img class="category__title-img" width="25" height="25"
-                             th:src="@{/images/icons/food.svg}" alt="icon">
-                    </h2>
-                    <div class="category_blocks">
-                        <div class="category_block" th:each="task: ${tasks}"
-                             th:if="${!task.archived} and ${task.category.clientCategory} == 'Еда'">
-                            <div class="category_top">
-                                <span th:class="'category_status ' + ${task.status.serverStatus}"
-                                      th:text="${task.status.clientStatus}">
-                                </span>
-                                <span class="category_more">
-                                        <svg width="23" height="6" viewBox="0 0 23 6" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                            <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
-                                        </svg>
-                                    </span>
-                                <div class="category_action">
-                                    <span>Действия:</span>
-                                    <a style="color: var(--accent);"
-                                       th:href="@{/tasks/{id}/delete(id=${task.id})}">
-                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M0 3.63645C0 3.23479 0.313401 2.90918 0.7 2.90918H13.3C13.6866 2.90918 14 3.23479 14 3.63645C14 4.03811 13.6866 4.36373 13.3 4.36373H0.7C0.313401 4.36373 0 4.03811 0 3.63645Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59966 1.45455C5.41401 1.45455 5.23596 1.53117 5.10468 1.66756C4.97341 1.80395 4.89966 1.98893 4.89966 2.18182V2.90909H9.09966V2.18182C9.09966 1.98893 9.02591 1.80395 8.89463 1.66756C8.76336 1.53117 8.58531 1.45455 8.39966 1.45455H5.59966ZM10.4997 2.90909V2.18182C10.4997 1.60316 10.2784 1.04821 9.88458 0.63904C9.49076 0.229869 8.95661 0 8.39966 0H5.59966C5.0427 0 4.50856 0.229869 4.11473 0.63904C3.72091 1.04821 3.49966 1.60316 3.49966 2.18182V2.90909H2.09966C1.71306 2.90909 1.39966 3.2347 1.39966 3.63636V13.8182C1.39966 14.3968 1.62091 14.9518 2.01473 15.361C2.40856 15.7701 2.9427 16 3.49966 16H10.4997C11.0566 16 11.5908 15.7701 11.9846 15.361C12.3784 14.9518 12.5997 14.3968 12.5997 13.8182V3.63636C12.5997 3.2347 12.2863 2.90909 11.8997 2.90909H10.4997ZM2.79966 4.36364V13.8182C2.79966 14.0111 2.87341 14.1961 3.00468 14.3324C3.13596 14.4688 3.31401 14.5455 3.49966 14.5455H10.4997C10.6853 14.5455 10.8634 14.4688 10.9946 14.3324C11.1259 14.1961 11.1997 14.0111 11.1997 13.8182V4.36364H2.79966Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M5.59941 6.5459C5.98601 6.5459 6.29941 6.87151 6.29941 7.27317V11.6368C6.29941 12.0385 5.98601 12.3641 5.59941 12.3641C5.21281 12.3641 4.89941 12.0385 4.89941 11.6368V7.27317C4.89941 6.87151 5.21281 6.5459 5.59941 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M8.40068 6.5459C8.78728 6.5459 9.10068 6.87151 9.10068 7.27317V11.6368C9.10068 12.0385 8.78728 12.3641 8.40068 12.3641C8.01408 12.3641 7.70068 12.0385 7.70068 11.6368V7.27317C7.70068 6.87151 8.01408 6.5459 8.40068 6.5459Z"
-                                                  fill="#EA4C60"/>
-                                        </svg>
-                                        Удалить запись
-                                    </a>
-                                    <a style="color: #FF9F0E;" href="edit">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M11.5446 1.28273C11.3906 1.28273 11.2381 1.31306 11.0958 1.372C10.9535 1.43093 10.8243 1.51731 10.7154 1.6262L2.17738 10.1642L1.55547 12.4445L3.83581 11.8226L12.3738 3.28464C12.4827 3.17574 12.5691 3.04646 12.628 2.90419C12.6869 2.76191 12.7173 2.60942 12.7173 2.45542C12.7173 2.30142 12.6869 2.14893 12.628 2.00665C12.5691 1.86437 12.4827 1.7351 12.3738 1.6262C12.2649 1.51731 12.1356 1.43093 11.9934 1.372C11.8511 1.31306 11.6986 1.28273 11.5446 1.28273ZM10.6049 0.186908C10.9028 0.0635111 11.2221 0 11.5446 0C11.867 0 12.1863 0.0635112 12.4842 0.186908C12.7821 0.310304 13.0528 0.491169 13.2808 0.719175C13.5088 0.947182 13.6897 1.21786 13.8131 1.51577C13.9365 1.81368 14 2.13297 14 2.45542C14 2.77787 13.9365 3.09716 13.8131 3.39507C13.6897 3.69297 13.5088 3.96366 13.2808 4.19166L4.6224 12.8501C4.54348 12.929 4.44532 12.986 4.33764 13.0153L0.810134 13.9774C0.588086 14.0379 0.350613 13.9749 0.187866 13.8121C0.0251199 13.6494 -0.0379445 13.4119 0.0226141 13.1899L0.984661 9.66236C1.01403 9.55468 1.07099 9.45652 1.14991 9.3776L9.80834 0.719175C10.0363 0.491169 10.307 0.310304 10.6049 0.186908Z"
-                                                  fill="#FF9F0E"/>
-                                        </svg>
-                                        Редактировать запись</a>
-                                </div>
-                            </div>
-                            <div class="category_text">
-                                <h3 class="category_title" th:text="${task.name}"></h3>
-                                <pre class="category_description" th:text="${task.description}"></pre>
-                            </div>
-                            <div class="category_bottom">
-                                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
-                                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
-                            </div>
-                            <div class="auxiliary">
-                                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
-                                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
-                                   href="#">Выполнено</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a class="category_block category_block--empty" th:if="${#lists.isEmpty(category.tasks)}"
+               th:href="@{/task-add}">
+              <span class="category_block-task">Создать задачу</span>
+            </a>
+          </div>
         </div>
-    </section>
+      </div>
+      <div class="tasks__wrapper two-view">
+        <div class="tasks_category" th:each="category: ${categoriesWithTasks}">
+          <div class="category_title">
+            <h2 class="category__title" th:classappend="'category__title--' + ${category.serverCategory}"
+                th:text="${category.clientCategory}"></h2>
+            <img class="category__title-img" width="25" height="25"
+                 th:src="@{'/images/icons/' + ${category.serverCategory} + '.svg'}" alt="icon">
+          </div>
+          <div class="category_blocks">
+            <div class="category_block" th:each="task: ${category.tasks}" th:if="${!task.archived}">
+              <div class="category_top">
+                <span th:class="'category_status ' + ${task.status.serverStatus}"
+                      th:text="${task.status.clientStatus}"></span>
+                <span class="category_more">
+                  <svg width="23" height="6" viewBox="0 0 23 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                    <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                    <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                  </svg>
+                </span>
+                <div class="category_action">
+                  <span>Действия:</span>
+                  <a class="category__btn category__btn--delete" th:href="@{/tasks/{id}/delete(id=${task.id})}">
+                    Удалить запись
+                  </a>
+                  <a class="category__btn category__btn--edit" href="edit">
+                    Редактировать запись</a>
+                </div>
+              </div>
+              <div class="category_text">
+                <h3 class="category_title" th:text="${task.name}"></h3>
+                <pre class="category_description" th:text="${task.description}"></pre>
+              </div>
+              <div class="category_bottom">
+                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
+                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
+              </div>
+              <div class="auxiliary">
+                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
+                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
+                   href="#">Выполнено</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tasks__wrapper three-view">
+        <div class="tasks_category" th:each="category: ${categoriesWithTasks}">
+          <div class="category_title">
+            <h2 class="category__title" th:classappend="'category__title--' + ${category.serverCategory}"
+                th:text="${category.clientCategory}"></h2>
+            <img class="category__title-img" width="25" height="25"
+                 th:src="@{'/images/icons/' + ${category.serverCategory} + '.svg'}" alt="icon">
+          </div>
+          <div class="category_blocks">
+            <div class="category_block" th:each="task: ${category.tasks}" th:if="${!task.archived}">
+              <div class="category_top">
+                <span th:class="'category_status ' + ${task.status.serverStatus}"
+                      th:text="${task.status.clientStatus}"></span>
+                <span class="category_more">
+                  <svg width="23" height="6" viewBox="0 0 23 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                    <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                    <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                  </svg>
+                </span>
+                <div class="category_action">
+                  <span>Действия:</span>
+                  <a class="category__btn category__btn--delete" th:href="@{/tasks/{id}/delete(id=${task.id})}">
+                    Удалить запись
+                  </a>
+                  <a class="category__btn category__btn--edit" href="edit">
+                    Редактировать запись</a>
+                </div>
+              </div>
+              <div class="category_text">
+                <h3 class="category_title" th:text="${task.name}"></h3>
+                <pre class="category_description" th:text="${task.description}"></pre>
+              </div>
+              <div class="category_bottom">
+                <span class="category_number-task" th:text="${'Задача #' + task.id}"></span>
+                <span class="category_date-task" th:text="${task.getFormattedDate()}"></span>
+              </div>
+              <div class="auxiliary">
+                <a th:href="@{/tasks/{id}/details(id=${task.id})}">Детали задачи</a>
+                <a class="animate-bubble" style="color: #FFF; background-color: #1ACD61;"
+                   href="#">Выполнено</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 </body>
 <script th:src="@{/js/swithes-view.js}"></script>
 <script th:src="@{/js/main.js}"></script>
 <script th:src="@{/js/custom-select.js}"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>
