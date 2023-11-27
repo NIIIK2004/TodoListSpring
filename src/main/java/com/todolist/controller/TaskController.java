@@ -1,10 +1,8 @@
 package com.todolist.controller;
 
-import com.todolist.impl.TaskCategoryImpl;
-import com.todolist.impl.TaskImpl;
-import com.todolist.impl.TaskStatusImpl;
-import com.todolist.impl.UserImpl;
+import com.todolist.impl.*;
 import com.todolist.model.Task;
+import com.todolist.model.TaskDeletes;
 import com.todolist.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,6 +20,7 @@ public class TaskController {
     private final UserImpl userImpl;
     private final TaskStatusImpl taskStatusImpl;
     private final TaskCategoryImpl taskCategoryImpl;
+    private final TaskDeletesImpl taskDeletesImpl;
 
     @GetMapping("/")
     public String tasksPage(@AuthenticationPrincipal UserDetails userDetails, Model model) {
@@ -58,12 +57,33 @@ public class TaskController {
         return "details";
     }
 
-    @DeleteMapping("/tasks/{id}/delete")
+    @GetMapping("/deleted-tasks")
+    public String deletedTasksPage(@AuthenticationPrincipal UserDetails userDetails, Model model) {
+        User user = userImpl.findByUsername(userDetails.getUsername());
+        model.addAttribute("user", user);
+        model.addAttribute("deletedTasks", taskImpl.findArchivedTasksByUser(user));
+        return "tasks_deletes";
+    }
+
+    @DeleteMapping("/deleted-tasks/{id}/delete")
     public ResponseEntity<String> deleteTask(@PathVariable Long id, @AuthenticationPrincipal UserDetails user) {
         try {
             Task task = taskImpl.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid" + id));
             taskImpl.moveTaskInDeleted(task, user);
             return ResponseEntity.ok().body("{\"message\": \"Task successfully deleted\"}");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/deleted-tasks/{id}/restore")
+    public ResponseEntity<String> restoreTask(@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails) {
+        try {
+            TaskDeletes taskToDelete = taskDeletesImpl.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid" + id));
+            taskImpl.restoreTaskFromDeleted(taskToDelete, userDetails);
+            return ResponseEntity.ok().body("{\"message\": \"Task successfully restored\"}");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         } catch (Exception e) {

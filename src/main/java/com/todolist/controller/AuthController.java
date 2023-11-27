@@ -5,6 +5,8 @@ import com.todolist.model.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +25,7 @@ public class AuthController {
         model.addAttribute("user", new User());
         return "registration";
     }
+
     @PostMapping("/registration/save")
     public String registration(@ModelAttribute("user") User user, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
         try {
@@ -34,9 +37,24 @@ public class AuthController {
             return "registration";
         }
     }
+
     @GetMapping("/login")
     public String login() {
         return "auth";
+    }
+
+    @GetMapping("/profile")
+    public String userProfile(@AuthenticationPrincipal UserDetails userDetails, Model model) {
+        User user = userImpl.findByUsername(userDetails.getUsername());
+        model.addAttribute("user", user);
+        return "profile";
+    }
+
+    @GetMapping("/profile/settings")
+    public String userSettings(@AuthenticationPrincipal UserDetails userDetails, Model model) {
+        User user = userImpl.findByUsername(userDetails.getUsername());
+        model.addAttribute("user", user);
+        return "settings";
     }
 
     @GetMapping("/logout")

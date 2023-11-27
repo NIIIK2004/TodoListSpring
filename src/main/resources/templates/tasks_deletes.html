@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoList | Удаленные записи</title>
+  <link rel="icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+  <link rel="shortcut icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="body">
+<header th:replace="fragments/header-main"></header>
+<main>
+  <section class="tasks">
+    <div class="container">
+      <h1 class="title">Удаленные записи</h1>
+      <ul class="tasks__list tasks__list--deletes">
+        <th:block th:each="taskDelete : ${deletedTasks}">
+          <li class="card">
+            <div class="card__top">
+              <span th:class="'name-status name-status--' + ${taskDelete.task.status.serverStatus}"
+                    th:text="${taskDelete.task.status.clientStatus}"></span>
+              <span class="card__more">
+                  <svg width="23" height="6" viewBox="0 0 23 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2.4" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                    <circle cx="11.2" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                    <circle cx="20.0001" cy="3.0001" r="2.4" fill="#EA4C60"/>
+                  </svg>
+                </span>
+              <div class="card__action">
+                <span>Действия:</span>
+                <div class="card__buttons">
+                  <a class="card__btn card__btn--restore" th:data-task-id="${taskDelete.id}" th:data-task-name="${taskDelete.task.name}"
+                     th:href="@{/deleted-tasks/{id}/restore(id=${taskDelete.id})}">
+                    Восстановить задачу
+                  </a>
+                  <a class="card__btn card__btn--delete" th:data-task-id="${taskDelete.task.id}" th:data-task-name="${taskDelete.task.name}"
+                     th:href="@{/deleted-tasks/{id}/delete(id=${taskDelete.task.id})}">
+                    Удалить навсегда
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card__text">
+              <h3 class="card__title" th:text="${taskDelete.task.name}"></h3>
+              <pre class="card__description" th:text="${taskDelete.task.description}"></pre>
+            </div>
+            <div class="card__bottom">
+              <span class="card__number" th:text="${'Задача #' + taskDelete.task.id}"></span>
+              <span class="card__date" th:text="${taskDelete.task.date}"></span>
+            </div>
+          </li>
+        </th:block>
+        <th:block th:if="${#lists.isEmpty(deletedTasks)}">
+          <a class="card card--empty" th:href="@{/task-add}">
+            <span class="card__create">У вас пока нет удаленных задач <br> Создайте задачу</span>
+          </a>
+        </th:block>
+      </ul>
+    </div>
+  </section>
+</main>
+<div class="decor decor--delete">
+  <ul class="notification__list"></ul>
+</div>
+</body>
+<script th:src="@{/js/task-delete.js}" type="module"></script>
+<script th:src="@{/js/custom-select.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</html>

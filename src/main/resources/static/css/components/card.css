@@ -1,0 +1,240 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 277px;
+  max-height: 280px;
+  border-radius: 15px;
+  background: #FFF;
+  padding: 25px 0 15px;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.4s ease-out, opacity 0.4s ease-out, margin 0.4s ease-out;
+}
+
+.card--deleted {
+  height: 0;
+  opacity: 0;
+  margin: 0;
+}
+
+.card--empty {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+}
+
+.card__top,
+.card__text,
+.card__bottom {
+  padding: 0 25px;
+}
+
+.card__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__more {
+  cursor: pointer;
+  z-index: 500;
+}
+
+.card__action span {
+  color: #121212;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.card__action {
+  opacity: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  position: absolute;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, top 0.5s, right 0.5s;
+}
+
+.card__more:hover + .card__action,
+.card__action:hover {
+  z-index: 100;
+  opacity: 1;
+  top: 8%;
+  right: 4%;
+  pointer-events: unset;
+}
+
+.card__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.card__btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  transition: opacity .4s;
+  align-self: flex-start;
+}
+
+.card__btn::before {
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  width: 14px;
+  height: 16px;
+}
+
+.card__btn:hover {
+  opacity: .5;
+}
+
+.card__btn--delete {
+  color: var(--accent);
+}
+
+.card__btn--delete::before {
+  background-image: url("../../images/icons/delete-color.svg");
+}
+
+.card__btn--edit {
+  color: var(--orange);
+}
+
+.card__btn--restore {
+  color: var(--green200);
+}
+
+.card__btn--edit::before {
+  background-image: url("../../images/icons/edit-color.svg");
+  height: 14px;
+}
+
+.card__btn--restore::before {
+  background-image: url("../../images/icons/restore.svg");
+  height: 16px;
+}
+
+.card__text {
+  margin: 20px 0 10px;
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+.card__description {
+  margin: 10px 0 0;
+  color: #A8A8A8;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.card__bottom {
+  padding-top: 15px;
+  border-top: 1px solid #D3D3D3;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__number {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.card__date {
+  color: #686868;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.card--empty:hover {
+  color: var(--accent);
+}
+
+.card__create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: color .4s;
+}
+
+.card__create::before {
+  font-size: 28px;
+  content: "+";
+}
+
+.auxiliary {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  padding: 20px 30px;
+  display: flex;
+  gap: 30px;
+  bottom: -5%;
+  left: 0;
+  width: 409px;
+  height: 97px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.30);
+  backdrop-filter: blur(1px);
+  transition: all .3s;
+}
+
+.auxiliary a {
+  background: #F6F6F6;
+  border: transparent;
+  border-radius: 13px;
+  padding: 20px 25px;
+  color: #383838;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 100%;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+}
+
+.auxiliary a:hover {
+  transform: scale(1.03);
+}
+
+.auxiliary a:active {
+  transform: scale(1);
+}
+
+.card:hover .auxiliary,
+.auxiliary:hover {
+  pointer-events: unset;
+  opacity: 1;
+  bottom: 0;
+  left: 0;
+}

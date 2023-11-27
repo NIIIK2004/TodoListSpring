@@ -1,36 +1,8 @@
 import {formattedDisplayDates} from "./components/dateFormatter.js";
-import {showBlock} from "./home/toggleBlockView.js";
 
-showBlock();
 formattedDisplayDates('.card__date');
 
-function setupBubblyButtons() {
-    function animateButton(e) {
-        e.preventDefault();
-        e.target.classList.remove('animate');
-        e.target.classList.add('animate');
-        setTimeout(function () {
-            e.target.classList.remove('animate');
-        }, 700);
-    }
-
-    const bubblyButtons = document.getElementsByClassName('animate-bubble');
-    for (let i = 0; i < bubblyButtons.length; i++) {
-        bubblyButtons[i].addEventListener('click', animateButton, false);
-    }
-}
-
-function setWidgetDate() {
-    let currentDate = new Date();
-    let day = String(currentDate.getDate()).padStart(2, '0');
-    let month = String(currentDate.getMonth() + 1).padStart(2, '0');
-    let year = currentDate.getFullYear();
-    let formattedDate = day + '.' + month + '.' + year;
-    let widgetDateElement = document.querySelector('.widget__date');
-    widgetDateElement.textContent = formattedDate;
-}
-
-const deleteButtons = document.querySelectorAll('.card__btn--delete');
+const deleteButtons = document.querySelectorAll('.card__btn--restore');
 deleteButtons.forEach(button => {
     button.addEventListener('click', function (event) {
         event.preventDefault();
@@ -52,6 +24,7 @@ function createNotification(name) {
     const notificationList = document.querySelector('.notification__list');
     const notification = document.createElement('li');
     notification.classList.add('notification');
+    notification.classList.add('notification--lazure');
     notification.style.transform = 'translateX(200%)';
 
     const title = document.createElement('span');
@@ -61,7 +34,7 @@ function createNotification(name) {
 
     const text = document.createElement('p');
     text.classList.add('notification__text');
-    text.innerHTML = `Ваша запись '${name}' и перемещена в раздел <a href="/deleted-tasks">удаленных записей</a>`;
+    text.innerHTML = `Ваша запись '${name}' была восстановлена и перемещена в раздел <a href="/">основных записей</a>`;
     notification.appendChild(text);
 
     notificationList.appendChild(notification);
@@ -92,7 +65,7 @@ function deleteTask(id, name) {
     const taskBlock = document.querySelector(`[data-task-id="${id}"]`).closest('.card');
     const notification = createNotification(name);
 
-    fetch(`/deleted-tasks/${id}/delete`, {
+    fetch(`/deleted-tasks/${id}/restore`, {
         method: 'DELETE',
     })
         .then(response => {
@@ -115,8 +88,3 @@ function deleteTask(id, name) {
             console.error('There has been a problem with your fetch operation:', error);
         });
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-    setWidgetDate();
-    setupBubblyButtons();
-});

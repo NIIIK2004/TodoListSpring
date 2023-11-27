@@ -2,77 +2,77 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoList | Создание задачи</title>
-    <link rel="icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
-    <link rel="shortcut icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoList | Создание задачи</title>
+  <link rel="icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+  <link rel="shortcut icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body class="body">
 <header th:replace="fragments/header-not-search"></header>
 <main>
-    <section class="details">
-        <div class="container">
-            <div class="section-top">
-                <h1 class="title">
-                    Создание задачи
-                </h1>
-                <a class="section-top__link" onclick="history.back();">
-                    Вернуться
-                </a>
+  <section class="details">
+    <div class="container">
+      <div class="section-top">
+        <h1 class="title">
+          Создание задачи
+        </h1>
+        <a class="section-top__link" onclick="history.back();">
+          Вернуться
+        </a>
+      </div>
+      <div class="details__content">
+        <form th:action="@{/task/save}" id="task-add_form" method="post">
+          <div class="details__selectors">
+            <div class="details__select">
+              <select class="select custom-select--status" id="status" name="status">
+                <option class="name-status" value="default" data-value="0"
+                        data-value-name="Статус задачи">Статус задачи
+                </option>
+                <th:block th:each="status : ${taskStatuses}">
+                  <option th:value="${status.id}" th:text="${status.clientStatus}"
+                          th:data-value="${status.id}"
+                          th:data-value-name="${status.serverStatus}"></option>
+                </th:block>
+              </select>
+              <div class="error error--selector error--status" id="statusError">Выберите статус задачи</div>
             </div>
-            <div class="details__content">
-                <form th:action="@{/task/save}" id="task-add_form" method="post">
-                    <div class="details__selectors">
-                        <div class="details__select">
-                            <select class="select custom-select--status" id="status" name="status">
-                                <option class="name-status" value="default" data-value="0"
-                                        data-value-name="Статус задачи">Статус задачи
-                                </option>
-                                <th:block th:each="status : ${taskStatuses}">
-                                    <option th:value="${status.id}" th:text="${status.clientStatus}"
-                                            th:data-value="${status.id}"
-                                            th:data-value-name="${status.serverStatus}"></option>
-                                </th:block>
-                            </select>
-                            <div class="error error--selector error--status" id="statusError">Выберите статус задачи</div>
-                        </div>
-                        <div class="details__select">
-                            <select class="select custom-select--category" id="category" name="category">
-                                <option class="name-status" value="default" data-value="0"
-                                        data-value-name="Категория задачи">Категория задачи
-                                </option>
-                                <th:block th:each="category : ${taskCategories}">
-                                    <option th:value="${category.id}" th:text="${category.clientCategory}"
-                                            th:data-value="${category.id}"
-                                            th:data-value-name="${category.serverCategory}"></option>
-                                </th:block>
-                            </select>
-                            <div class="error error--selector error__category" id="categoryError">Выберите категорию задачи</div>
-                        </div>
-                    </div>
-                    <div class="details__top">
-                        <p class="error" id="nameError">Название задачи не может быть пустым</p>
-                        <h2 class="details__name title">
-                            <input type="text" name="name" id="name" placeholder="Введите название задачи">
-                        </h2>
-                    </div>
-                    <p class="error" id="descriptionError">Текст задачи не может быть пустым</p>
-                    <textarea class="details__text" id="description" name="description"
-                              data-auto-resize="true" placeholder="Напишите какой-то текст"></textarea>
-                    <div class="details__bottom">
-                        <div class="details__list">
-                            <button class="details__btn details__btn--complete" type="submit">Создать</button>
-                            <a class="details__btn details__btn--cancel" onclick="history.back();">Отменить</a>
-                        </div>
-                    </div>
-                </form>
+            <div class="details__select">
+              <select class="select custom-select--category" id="category" name="category">
+                <option class="name-status" value="default" data-value="0"
+                        data-value-name="Категория задачи">Категория задачи
+                </option>
+                <th:block th:each="category : ${taskCategories}">
+                  <option th:value="${category.id}" th:text="${category.clientCategory}"
+                          th:data-value="${category.id}"
+                          th:data-value-name="${category.serverCategory}"></option>
+                </th:block>
+              </select>
+              <div class="error error--selector error__category" id="categoryError">Выберите категорию задачи</div>
             </div>
-        </div>
-    </section>
+          </div>
+          <div class="details__top">
+            <p class="error" id="nameError">Название задачи не может быть пустым</p>
+            <h2 class="details__name title">
+              <input type="text" name="name" id="name" placeholder="Введите название задачи">
+            </h2>
+          </div>
+          <p class="error" id="descriptionError">Текст задачи не может быть пустым</p>
+          <textarea class="details__text" id="description" name="description"
+                    data-auto-resize="true" placeholder="Напишите какой-то текст"></textarea>
+          <div class="details__bottom">
+            <div class="details__list">
+              <button class="details__btn details__btn--complete" type="submit">Создать</button>
+              <a class="details__btn details__btn--cancel" onclick="history.back();">Отменить</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="

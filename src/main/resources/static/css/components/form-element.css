@@ -1,41 +1,41 @@
 .error {
-    color: #EA4C60;
-    font-size: 16px;
-    display: none;
-    font-weight: 500;
+  color: #EA4C60;
+  font-size: 16px;
+  display: none;
+  font-weight: 500;
 }
 
 .error:not(:last-child) {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 .error:last-child {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .error--selector {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .error--active {
-    display: block;
+  display: block;
 }
 
 .field {
-    background-color: #D4D4D4;
-    padding: 20px;
-    line-height: 1;
-    font-size: 18px;
-    color: var(--text-color);
-    border-radius: 13px;
+  background-color: #D4D4D4;
+  padding: 20px;
+  line-height: 1;
+  font-size: 18px;
+  color: var(--text-color);
+  border-radius: 13px;
 }
 
 .field::placeholder {
-    color: #595959;
+  color: #595959;
 }
 
 @media (max-width: 540px) {
-    .field {
-        font-size: 16px;
-    }
+  .field {
+    font-size: 16px;
+  }
 }

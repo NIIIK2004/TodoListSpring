@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoList | Профиль</title>
+  <link rel="icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+  <link rel="shortcut icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="body">
+<header th:replace="fragments/header-profile"></header>
+<main>
+  <section class="profile">
+    <div class="container">
+      <h1 class="profile__title title">Профиль</h1>
+      <div class="profile__top profile__indent">
+        <img src="../images/avatar-profile.jpg" alt="avatar" width="200" height="200">
+        <div class="profile__top-content">
+          <p class="profile__top-text">
+            Добро пожаловать в профиль, <span th:text="${user.getName()}"></span>!
+          </p>
+          <a class="profile__top-btn" th:href="@{/profile/settings}">Редактировать профиль</a>
+        </div>
+      </div>
+      <div class="profile__information profile__indent">
+        <span class="profile__subtitle">
+          Основная информация
+        </span>
+        <ul class="profile__information-list">
+          <li class="profile__information-item">
+            <label class="profile__label" for="name">Имя</label>
+            <input class="profile__field profile__field--disabled" id="name" name="name" type="text"
+                   th:value="${user.getName()}" placeholder="Введите имя" disabled>
+          </li>
+          <li class="profile__information-item">
+            <label class="profile__label" for="surname">Фамилия</label>
+            <input class="profile__field profile__field--disabled" id="surname" name="surname" type="text"
+                   th:value="${user.getSurname()}" placeholder="Введите фамилию" disabled>
+          </li>
+          <li class="profile__information-item">
+            <label class="profile__label" for="email">Почта</label>
+            <input class="profile__field profile__field--disabled" id="email" name="email" type="email"
+                   th:value="${user.getEmail()}" placeholder="Введите почту" disabled>
+          </li>
+          <li class="profile__information-item">
+            <label class="profile__label" for="login">Логин</label>
+            <input class="profile__field profile__field--disabled" id="login" name="login" type="text"
+                   th:value="${user.getUsername()}" placeholder="Введите логин" disabled>
+          </li>
+          <li class="profile__information-item">
+            <label class="profile__label" for="password">Пароль</label>
+            <input class="profile__field profile__field--disabled" id="password" name="password"
+                   type="password" value="******************" placeholder="Введите пароль" disabled>
+          </li>
+        </ul>
+      </div>
+      <div class="profile__security profile__indent">
+        <span class="profile__subtitle">
+          Безопасность и функции
+        </span>
+        <ul class="profile__security-list">
+          <li class="profile__security-item">
+            <label class="radio-label">
+              <span class="radio-label__text">
+                Двухфакторная аутентификация
+              </span>
+              <div class="radio-label__content">
+                <input class="radio-input" type="radio" name="customRadio1">
+                <span class="radio-button"></span>
+                <span class="radio-circle"></span>
+              </div>
+            </label>
+          </li>
+          <li class="profile__security-item">
+            <label class="radio-label">
+              <span class="radio-label__text">
+                Умное распознавание даты
+              </span>
+              <div class="radio-label__content">
+                <input class="radio-input" type="radio" name="customRadio2">
+                <span class="radio-button"></span>
+                <span class="radio-circle"></span>
+              </div>
+            </label>
+          </li>
+          <li class="profile__security-item">
+            <label class="radio-label">
+              <span class="radio-label__text">
+                Экспериментальные функции
+              </span>
+              <div class="radio-label__content">
+                <input class="radio-input" type="radio" name="customRadio3">
+                <span class="radio-button"></span>
+                <span class="radio-circle"></span>
+              </div>
+            </label>
+          </li>
+          <li class="profile__security-item">
+            <label class="radio-label">
+              <span class="radio-label__text">
+                Рассылка на вашу почту
+              </span>
+              <div class="radio-label__content">
+                <input class="radio-input" type="radio" name="customRadio4">
+                <span class="radio-button"></span>
+                <span class="radio-circle"></span>
+              </div>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="profile__themes profile__indent">
+        <span class="profile__subtitle">
+          Выбор темы
+        </span>
+        <div class="profile__themes-list">
+          <div class="profile__themes-item">
+            <span class="profile__themes-name profile__themes-name--classic">Классическая</span>
+            <img class="profile__themes-img profile__themes-img--classic" th:src="@{/images/classic.jpg}"
+                 alt="классическая тема">
+          </div>
+          <div class="profile__themes-item">
+            <span class="profile__themes-name profile__themes-name--dark">Темная тема</span>
+            <img class="profile__themes-img profile__themes-img--dark" th:src="@{/images/dark.jpg}"
+                 alt="темная тема">
+          </div>
+        </div>
+      </div>
+      <div class="profile__social profile__indent">
+        <span class="profile__subtitle">
+          Боты и социальные сети
+        </span>
+        <ul class="profile__social-list">
+          <li class="profile__social-item">
+            <img class="profile__social-img" th:src="@{/images/social/1.svg}" alt="telegram" width="" height="">
+            <a class="profile__social-link profile__social-link--telegram" href="">Подключить</a>
+          </li>
+          <li class="profile__social-item">
+            <img class="profile__social-img" th:src="@{/images/social/2.svg}" alt="vk" width="" height="">
+            <a class="profile__social-link profile__social-link--vk" href="">Подключить</a>
+          </li>
+          <li class="profile__social-item">
+            <img class="profile__social-img" th:src="@{/images/social/3.svg}" alt="mosioal" width="" height="">
+            <a class="profile__social-link profile__social-link--mosioal" href="">Подключить</a>
+          </li>
+          <li class="profile__social-item">
+            <img class="profile__social-img" th:src="@{/images/social/4.svg}" alt="google" width="" height="">
+            <a class="profile__social-link profile__social-link--google" href="">Подключить</a>
+          </li>
+          <li class="profile__social-item">
+            <img class="profile__social-img" th:src="@{/images/social/5.svg}" alt="tandem" width="" height="">
+            <a class="profile__social-link profile__social-link--tandem" href="">Подключить</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

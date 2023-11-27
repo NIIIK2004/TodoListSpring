@@ -11,6 +11,8 @@
 @import 'components/radio-button.css';
 @import 'components/form-element.css';
 @import 'components/checkbox.css';
+@import 'components/notification.css';
+@import 'components/card.css';
 
 /*Details*/
 @import 'details.css';

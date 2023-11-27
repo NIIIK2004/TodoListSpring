@@ -1,0 +1,59 @@
+.tasks__top {
+  margin-top: 20px;
+  color: #383838;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 120%;
+  text-overflow: ellipsis;
+  max-width: 360px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tasks__title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tasks__title--work {
+  color: #4C8BEA;
+}
+
+.tasks__title--study {
+  color: #CA93FF;
+}
+
+.tasks__title--personal {
+  color: #EA7B4C;
+}
+
+.tasks__title--favorite {
+  color: #30CE95;
+}
+
+.tasks__title--home {
+  color: #EABE4C;
+}
+
+.tasks__title--friends {
+  color: #FFA693;
+}
+
+.tasks__title--game {
+  color: var(--accent);
+}
+
+.tasks__title--food {
+  color: #FF93D4;
+}
+
+.tasks__title--img {
+  object-fit: fill;
+  object-position: center;
+  background-repeat: no-repeat;
+}

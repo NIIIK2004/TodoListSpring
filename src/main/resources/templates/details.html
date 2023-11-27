@@ -2,49 +2,49 @@
 <html lang="ru" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${task.name}"></title>
-    <link rel="icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
-    <link rel="shortcut icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${task.name}"></title>
+  <link rel="icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+  <link rel="shortcut icon" th:href="@{/images/icons/favicon.svg}" type="images/x-icon">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body class="body">
 <header th:replace="fragments/header-not-search"></header>
 <main>
-    <section class="details">
-        <div class="container">
-            <div class="section-top">
-                <h1 class="title" th:text="${'Детали задачи #' + task.id}"></h1>
-                <a class="section-top__link" onclick="history.back();">
-                    Вернуться
-                </a>
-            </div>
-            <div class="details__content">
+  <section class="details">
+    <div class="container">
+      <div class="section-top">
+        <h1 class="title" th:text="${'Детали задачи #' + task.id}"></h1>
+        <a class="section-top__link" onclick="history.back();">
+          Вернуться
+        </a>
+      </div>
+      <div class="details__content">
                 <span th:class="'name-status name-status--fixed name-status--not_necessary name-status--' + ${task.status.serverStatus}"
                       th:text="${task.status.clientStatus}"></span>
-                <h2 class="details__name title" th:text="${task.name}">
-                </h2>
-                <pre class="details__text" th:text="${task.description}"></pre>
-                <div class="details__bottom">
-                    <div class="details__list">
-                        <button class="details__btn details__btn--complete" type="button">
-                            Выполнено
-                        </button>
-                        <a class="details__btn details__btn--edit" href="edit.html">
-                            Изменить задачу
-                        </a>
-                        <button class="details__btn details__btn--delete" type="button">
-                            Удалить задачу
-                        </button>
-                    </div>
-                    <span class="details__time" th:text="${task.getFormattedDate()}"></span>
-                </div>
-            </div>
+        <h2 class="details__name title" th:text="${task.name}">
+        </h2>
+        <pre class="details__text" th:text="${task.description}"></pre>
+        <div class="details__bottom">
+          <div class="details__list">
+            <button class="details__btn details__btn--complete" type="button">
+              Выполнено
+            </button>
+            <a class="details__btn details__btn--edit" href="edit.html">
+              Изменить задачу
+            </a>
+            <button class="details__btn details__btn--delete" type="button">
+              Удалить задачу
+            </button>
+          </div>
+          <span class="details__time" th:text="${task.date}"></span>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </main>
 </body>
 </html>

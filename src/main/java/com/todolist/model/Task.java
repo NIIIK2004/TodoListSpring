@@ -8,8 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 @Data
 @AllArgsConstructor
@@ -27,11 +25,6 @@ public class Task {
     @Size(max = 2000)
     private String description;
     private LocalDate date;
-
-    public String getFormattedDate() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM, d yyyy", new Locale("ru"));
-        return date.format(formatter);
-    }
 
     private boolean archived;
     @ManyToOne

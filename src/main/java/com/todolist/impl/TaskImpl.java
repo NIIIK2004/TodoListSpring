@@ -56,6 +56,15 @@ public class TaskImpl implements TaskDao {
         taskRepo.save(task);
     }
 
+    public void restoreTaskFromDeleted(TaskDeletes taskDelete, UserDetails userDetails) {
+        User user = userDao.findByUsername(userDetails.getUsername());
+        Task task = taskDelete.getTask();
+        task.setUser(user);
+        task.setArchived(false);
+        taskDeleteRepo.deleteTaskDeletesById(taskDelete.getId());
+        taskRepo.save(task);
+    }
+
     public void saveTask(Task task, UserDetails userDetails, Long statusId, Long categoryId) {
         TaskStatus taskStatus = taskStatusImpl.findById(statusId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid status id"));

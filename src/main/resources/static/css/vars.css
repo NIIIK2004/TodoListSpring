@@ -1,10 +1,12 @@
 :root {
-    --bg-white-theme: #E9E9E9;
-    --bg-black-theme: #272727;
-    --accent: #EA4C60;
-    --text-color: #383838;
-    --text-color-grey: #A8A8A8;
-    --text-color-grey-800: #797979;
-    --green: #1ACD61;
-    --orange: #FF9F0E;
+  --bg-white-theme: #E9E9E9;
+  --bg-black-theme: #272727;
+  --accent: #EA4C60;
+  --text-color: #383838;
+  --text-color-grey: #A8A8A8;
+  --text-color-grey-800: #797979;
+  --green: #1ACD61;
+  --green200: #4CEA65;
+  --lazure: #30ce95;
+  --orange: #FF9F0E;
 }
